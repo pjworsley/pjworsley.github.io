@@ -3,6 +3,6 @@
     font-style: normal;
     font-weight: 400;
     src: local('Agency FB'), local('AgencyFB-Regular'),
-    url(css/agencyfb.woff) format('woff'),
-    url(css/agencyfb.ttf) format('truetype');
+    url(agencyfb.woff) format('woff'),
+    url(agencyfb.ttf) format('truetype');
 }

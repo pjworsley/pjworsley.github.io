@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>capyle.ca package &#8212; capyle 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="capyle-ca-package">
+<h1>capyle.ca package<a class="headerlink" href="#capyle-ca-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-capyle.ca.caconfig">
+<span id="capyle-ca-caconfig-module"></span><h2>capyle.ca.caconfig module<a class="headerlink" href="#module-capyle.ca.caconfig" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="capyle.ca.caconfig.CAConfig">
+<em class="property">class </em><code class="descclassname">capyle.ca.caconfig.</code><code class="descname">CAConfig</code><span class="sig-paren">(</span><em>filepath</em><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.caconfig.CAConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="capyle.ca.caconfig.CAConfig.ROOT_PATH">
+<code class="descname">ROOT_PATH</code><em class="property"> = '/Users/Peter/University/UGProject/project/capyle/guicomponents'</em><a class="headerlink" href="#capyle.ca.caconfig.CAConfig.ROOT_PATH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="capyle.ca.caconfig.CAConfig.default_paths">
+<code class="descname">default_paths</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.caconfig.CAConfig.default_paths" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="capyle.ca.caconfig.CAConfig.fill_in_defaults">
+<code class="descname">fill_in_defaults</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.caconfig.CAConfig.fill_in_defaults" title="Permalink to this definition">¶</a></dt>
+<dd><p>if any of the fields are not filled in in description
+they are filled in with defaults here</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="capyle.ca.caconfig.CAConfig.neighbourhood">
+<code class="descname">neighbourhood</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.caconfig.CAConfig.neighbourhood" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="capyle.ca.caconfig.CAConfig.save">
+<code class="descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.caconfig.CAConfig.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="capyle.ca.caconfig.CAConfig.set_initial_grid">
+<code class="descname">set_initial_grid</code><span class="sig-paren">(</span><em>grid</em><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.caconfig.CAConfig.set_initial_grid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="capyle.ca.caconfig.CAConfig.setgriddims">
+<code class="descname">setgriddims</code><span class="sig-paren">(</span><em>dims=None</em>, <em>num_generations=None</em><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.caconfig.CAConfig.setgriddims" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-capyle.ca.grid">
+<span id="capyle-ca-grid-module"></span><h2>capyle.ca.grid module<a class="headerlink" href="#module-capyle.ca.grid" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="capyle.ca.grid.Grid">
+<em class="property">class </em><code class="descclassname">capyle.ca.grid.</code><code class="descname">Grid</code><a class="headerlink" href="#capyle.ca.grid.Grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Superclass to the Grid1D and Grid2D classes</p>
+<dl class="method">
+<dt id="capyle.ca.grid.Grid.run">
+<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.grid.Grid.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set up running the CA for given generations,
+saving each timestep to an array &#8216;timeline&#8217;</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The actual running of the CA is done by the self.runca
+which is passed to the progress bar so that it can be
+updated</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">contains the grid state for each timestep</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">numpy.ndarray</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="capyle.ca.grid.Grid.runca">
+<code class="descname">runca</code><span class="sig-paren">(</span><em>num_generations</em>, <em>progressbar</em>, <em>timeline</em><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.grid.Grid.runca" title="Permalink to this definition">¶</a></dt>
+<dd><p>Running the CA for given generations,
+saving each timestep to an array &#8216;timeline&#8217;</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This function is passed to the progress bar for it to execute</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="capyle.ca.grid.Grid.set_grid">
+<code class="descname">set_grid</code><span class="sig-paren">(</span><em>g</em><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.grid.Grid.set_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set self.grid to supplied grid, scaling the supplied grid
+if nessacary</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="capyle.ca.grid.Grid.set_neighbourhood">
+<code class="descname">set_neighbourhood</code><span class="sig-paren">(</span><em>ca_config</em><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.grid.Grid.set_neighbourhood" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets self.neighbourhood with a Neighbourhood object
+from ca_config</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ca_config</strong> (<a class="reference internal" href="#capyle.ca.caconfig.CAConfig" title="capyle.ca.caconfig.CAConfig"><em>CAConfig</em></a>) &#8211; the config object with the
+neighbourhood array stored</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="capyle.ca.grid.Grid.step">
+<code class="descname">step</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.grid.Grid.step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enforce a step funciton in subclasses</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-capyle.ca.grid1d">
+<span id="capyle-ca-grid1d-module"></span><h2>capyle.ca.grid1d module<a class="headerlink" href="#module-capyle.ca.grid1d" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="capyle.ca.grid1d.Grid1D">
+<em class="property">class </em><code class="descclassname">capyle.ca.grid1d.</code><code class="descname">Grid1D</code><span class="sig-paren">(</span><em>ca_config</em>, <em>transition_func</em>, <em>wrapping=False</em><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.grid1d.Grid1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">grid.Grid</span></code></p>
+<dl class="method">
+<dt id="capyle.ca.grid1d.Grid1D.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>ca_config</em>, <em>transition_func</em>, <em>wrapping=False</em><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.grid1d.Grid1D.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>1D grid constructor - takes the generations, states and
+transition function to create the appropriate grid.</p>
+<blockquote>
+<div>If no neighbourhood specified [1,1,1] will be used
+Default grid configuration; center cell in state[-1]
+Wrapping behaviour may be introduced by wrapping flag to True</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="capyle.ca.grid1d.Grid1D.get_neighbour_arrays">
+<code class="descname">get_neighbour_arrays</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.grid1d.Grid1D.get_neighbour_arrays" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the states of the cells left and right neighbours
+and apply the neighbourhood</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="capyle.ca.grid1d.Grid1D.refresh_wrap">
+<code class="descname">refresh_wrap</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.grid1d.Grid1D.refresh_wrap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the wrapping border of the grid to reflect any changes</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="capyle.ca.grid1d.Grid1D.step">
+<code class="descname">step</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.grid1d.Grid1D.step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the next timestep by applying the transistion function
+and save the new state to grid</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="capyle.ca.grid1d.randomise1d">
+<code class="descclassname">capyle.ca.grid1d.</code><code class="descname">randomise1d</code><span class="sig-paren">(</span><em>grid</em>, <em>background_state</em>, <em>proportions</em><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.grid1d.randomise1d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Randomise a 2D grid for a 1D cellular automata</p>
+<p>Takes a grid, the background state, and
+proportions for each state in a list of tuples ([(1,0.4), (2,0.3)])</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-capyle.ca.grid2d">
+<span id="capyle-ca-grid2d-module"></span><h2>capyle.ca.grid2d module<a class="headerlink" href="#module-capyle.ca.grid2d" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="capyle.ca.grid2d.Grid2D">
+<em class="property">class </em><code class="descclassname">capyle.ca.grid2d.</code><code class="descname">Grid2D</code><span class="sig-paren">(</span><em>ca_config</em>, <em>transition_func</em><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.grid2d.Grid2D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">grid.Grid</span></code></p>
+<dl class="method">
+<dt id="capyle.ca.grid2d.Grid2D.count_neighbours">
+<code class="descname">count_neighbours</code><span class="sig-paren">(</span><em>neighbour_states</em><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.grid2d.Grid2D.count_neighbours" title="Permalink to this definition">¶</a></dt>
+<dd><p>Taking the 8 neighbour arrays, return n arrays of how many
+neighbours of each state a cell has where n is the number of states</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="capyle.ca.grid2d.Grid2D.gen_wrap_indicies">
+<code class="descname">gen_wrap_indicies</code><span class="sig-paren">(</span><em>wrapsize</em><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.grid2d.Grid2D.gen_wrap_indicies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the indecies used when refreshing the wrap</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="capyle.ca.grid2d.Grid2D.get_neighbour_states">
+<code class="descname">get_neighbour_states</code><span class="sig-paren">(</span><em>applyneighbourhood=True</em><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.grid2d.Grid2D.get_neighbour_states" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the 8 arrays of each neighbours current state</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="capyle.ca.grid2d.Grid2D.refresh_wrap">
+<code class="descname">refresh_wrap</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.grid2d.Grid2D.refresh_wrap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the wrapping border of the grid to reflect any changes</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="capyle.ca.grid2d.Grid2D.step">
+<code class="descname">step</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.grid2d.Grid2D.step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the next timestep by applying the transistion function
+and save the new state to grid</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="capyle.ca.grid2d.randomise2d">
+<code class="descclassname">capyle.ca.grid2d.</code><code class="descname">randomise2d</code><span class="sig-paren">(</span><em>grid</em>, <em>background_state</em>, <em>proportions</em><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.grid2d.randomise2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes a grid, the background state, and
+proportions for each state in a list of tuples ([(1,0.4), (2,0.3)])</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-capyle.ca.neighbourhood">
+<span id="capyle-ca-neighbourhood-module"></span><h2>capyle.ca.neighbourhood module<a class="headerlink" href="#module-capyle.ca.neighbourhood" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="capyle.ca.neighbourhood.Neighbourhood">
+<em class="property">class </em><code class="descclassname">capyle.ca.neighbourhood.</code><code class="descname">Neighbourhood</code><span class="sig-paren">(</span><em>nhood</em>, <em>dims=2</em><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.neighbourhood.Neighbourhood" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="capyle.ca.neighbourhood.Neighbourhood.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>nhood</em>, <em>dims=2</em><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.neighbourhood.Neighbourhood.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Neighbourhood object for use with the Grid objects</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-capyle.ca">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-capyle.ca" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">capyle.ca package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-capyle.ca.caconfig">capyle.ca.caconfig module</a></li>
+<li><a class="reference internal" href="#module-capyle.ca.grid">capyle.ca.grid module</a></li>
+<li><a class="reference internal" href="#module-capyle.ca.grid1d">capyle.ca.grid1d module</a></li>
+<li><a class="reference internal" href="#module-capyle.ca.grid2d">capyle.ca.grid2d module</a></li>
+<li><a class="reference internal" href="#module-capyle.ca.neighbourhood">capyle.ca.neighbourhood module</a></li>
+<li><a class="reference internal" href="#module-capyle.ca">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/capyle.ca.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Peter Worsley.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/capyle.ca.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,7 @@
+capyle
+======
+
+.. toctree::
+   :maxdepth: 4
+
+   capyle

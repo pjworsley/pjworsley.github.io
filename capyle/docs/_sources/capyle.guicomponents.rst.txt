@@ -1,0 +1,142 @@
+capyle.guicomponents package
+============================
+
+Submodules
+----------
+
+capyle.guicomponents.aboutwindow module
+---------------------------------------
+
+.. automodule:: capyle.guicomponents.aboutwindow
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+capyle.guicomponents.cagraph module
+-----------------------------------
+
+.. automodule:: capyle.guicomponents.cagraph
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+capyle.guicomponents.configcomponent module
+-------------------------------------------
+
+.. automodule:: capyle.guicomponents.configcomponent
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+capyle.guicomponents.configframe module
+---------------------------------------
+
+.. automodule:: capyle.guicomponents.configframe
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+capyle.guicomponents.generationsui module
+-----------------------------------------
+
+.. automodule:: capyle.guicomponents.generationsui
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+capyle.guicomponents.griddimsui module
+--------------------------------------
+
+.. automodule:: capyle.guicomponents.griddimsui
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+capyle.guicomponents.gui_utils module
+-------------------------------------
+
+.. automodule:: capyle.guicomponents.gui_utils
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+capyle.guicomponents.initialgridui module
+-----------------------------------------
+
+.. automodule:: capyle.guicomponents.initialgridui
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+capyle.guicomponents.initialgridwindow module
+---------------------------------------------
+
+.. automodule:: capyle.guicomponents.initialgridwindow
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+capyle.guicomponents.neighbourhoodui module
+-------------------------------------------
+
+.. automodule:: capyle.guicomponents.neighbourhoodui
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+capyle.guicomponents.newcawindow module
+---------------------------------------
+
+.. automodule:: capyle.guicomponents.newcawindow
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+capyle.guicomponents.playbackui module
+--------------------------------------
+
+.. automodule:: capyle.guicomponents.playbackui
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+capyle.guicomponents.rulenumberui module
+----------------------------------------
+
+.. automodule:: capyle.guicomponents.rulenumberui
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+capyle.guicomponents.screenshotui module
+----------------------------------------
+
+.. automodule:: capyle.guicomponents.screenshotui
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+capyle.guicomponents.separator module
+-------------------------------------
+
+.. automodule:: capyle.guicomponents.separator
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+capyle.guicomponents.statecolorsui module
+-----------------------------------------
+
+.. automodule:: capyle.guicomponents.statecolorsui
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: capyle.guicomponents
+    :members:
+    :undoc-members:
+    :show-inheritance:

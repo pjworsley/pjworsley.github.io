@@ -1,0 +1,46 @@
+capyle package
+==============
+
+Subpackages
+-----------
+
+.. toctree::
+
+    capyle.ca
+    capyle.guicomponents
+
+Submodules
+----------
+
+capyle.display module
+---------------------
+
+.. automodule:: capyle.display
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+capyle.playbackcontrols module
+------------------------------
+
+.. automodule:: capyle.playbackcontrols
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+capyle.utils module
+-------------------
+
+.. automodule:: capyle.utils
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: capyle
+    :members:
+    :undoc-members:
+    :show-inheritance:

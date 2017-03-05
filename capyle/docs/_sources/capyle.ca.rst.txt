@@ -1,0 +1,54 @@
+capyle.ca package
+=================
+
+Submodules
+----------
+
+capyle.ca.caconfig module
+-------------------------
+
+.. automodule:: capyle.ca.caconfig
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+capyle.ca.grid module
+---------------------
+
+.. automodule:: capyle.ca.grid
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+capyle.ca.grid1d module
+-----------------------
+
+.. automodule:: capyle.ca.grid1d
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+capyle.ca.grid2d module
+-----------------------
+
+.. automodule:: capyle.ca.grid2d
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+capyle.ca.neighbourhood module
+------------------------------
+
+.. automodule:: capyle.ca.neighbourhood
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: capyle.ca
+    :members:
+    :undoc-members:
+    :show-inheritance:

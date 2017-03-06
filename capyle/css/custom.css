@@ -1,0 +1,7 @@
+.header {
+    display:table;
+}
+.header-text {
+    vertical-align: middle;
+    display:table-cell;
+}

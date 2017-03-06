@@ -98,8 +98,8 @@
 .markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
 .markdown-preview[data-use-github-style] code { color: inherit; }
 .markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
-.scrollbars-visible-always .markdown-preview pre.editor-colors::shadow .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors::shadow .horizontal-scrollbar { visibility: hidden; }
-.scrollbars-visible-always .markdown-preview pre.editor-colors:hover::shadow .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover::shadow .horizontal-scrollbar { visibility: visible; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors:hover .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover .horizontal-scrollbar { visibility: visible; }
 .markdown-preview .task-list-item-checkbox { position: absolute; margin: 0.25em 0px 0px -1.4em; }
 .bracket-matcher .region {
   border-bottom: 1px dotted lime;
@@ -113,85 +113,66 @@
   width: 25em !important;
 }
 
-pre.editor-colors,
-.host {
+pre.editor-colors {
   background-color: #282c34;
   color: #abb2bf;
 }
-pre.editor-colors .line.cursor-line,
-.host .line.cursor-line {
+pre.editor-colors .line.cursor-line {
   background-color: rgba(153, 187, 255, 0.04);
 }
-pre.editor-colors .invisible,
-.host .invisible {
+pre.editor-colors .invisible {
   color: #abb2bf;
 }
-pre.editor-colors .cursor,
-.host .cursor {
+pre.editor-colors .cursor {
   border-left: 2px solid #528bff;
 }
-pre.editor-colors .selection .region,
-.host .selection .region {
+pre.editor-colors .selection .region {
   background-color: #3e4451;
 }
-pre.editor-colors .bracket-matcher .region,
-.host .bracket-matcher .region {
+pre.editor-colors .bracket-matcher .region {
   border-bottom: 1px solid #528bff;
   box-sizing: border-box;
 }
-pre.editor-colors .invisible-character,
-.host .invisible-character {
+pre.editor-colors .invisible-character {
   color: rgba(171, 178, 191, 0.15);
 }
-pre.editor-colors .indent-guide,
-.host .indent-guide {
+pre.editor-colors .indent-guide {
   color: rgba(171, 178, 191, 0.15);
 }
-pre.editor-colors .wrap-guide,
-.host .wrap-guide {
+pre.editor-colors .wrap-guide {
   background-color: rgba(171, 178, 191, 0.15);
 }
 pre.editor-colors .find-result .region.region.region,
-.host .find-result .region.region.region,
-pre.editor-colors .current-result .region.region.region,
-.host .current-result .region.region.region {
+pre.editor-colors .current-result .region.region.region {
   border-radius: 2px;
   background-color: rgba(82, 139, 255, 0.24);
   transition: border-color 0.4s;
 }
-pre.editor-colors .find-result .region.region.region,
-.host .find-result .region.region.region {
+pre.editor-colors .find-result .region.region.region {
   border: 2px solid transparent;
 }
-pre.editor-colors .current-result .region.region.region,
-.host .current-result .region.region.region {
+pre.editor-colors .current-result .region.region.region {
   border: 2px solid #528bff;
   transition-duration: .1s;
 }
-pre.editor-colors .gutter .line-number,
-.host .gutter .line-number {
+pre.editor-colors .gutter .line-number {
   color: #636d83;
   -webkit-font-smoothing: antialiased;
 }
-pre.editor-colors .gutter .line-number.cursor-line,
-.host .gutter .line-number.cursor-line {
+pre.editor-colors .gutter .line-number.cursor-line {
   color: #abb2bf;
   background-color: #2c313a;
 }
-pre.editor-colors .gutter .line-number.cursor-line-no-selection,
-.host .gutter .line-number.cursor-line-no-selection {
+pre.editor-colors .gutter .line-number.cursor-line-no-selection {
   background-color: transparent;
 }
-pre.editor-colors .gutter .line-number .icon-right,
-.host .gutter .line-number .icon-right {
+pre.editor-colors .gutter .line-number .icon-right {
   color: #abb2bf;
 }
-pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before,
-.host .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before {
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before {
   bottom: -3px;
 }
-pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed::after,
-.host .gutter:not(.git-diff-icon) .line-number.git-line-removed::after {
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed::after {
   content: "";
   position: absolute;
   left: 0px;
@@ -201,382 +182,324 @@ pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed::aft
   pointer-events: none;
 }
 pre.editor-colors .gutter .line-number.folded,
-.host .gutter .line-number.folded,
 pre.editor-colors .gutter .line-number:after,
-.host .gutter .line-number:after,
-pre.editor-colors .fold-marker:after,
-.host .fold-marker:after {
+pre.editor-colors .fold-marker:after {
   color: #abb2bf;
 }
-.comment {
+.syntax--comment {
   color: #5c6370;
   font-style: italic;
 }
-.comment .markup.link {
+.syntax--comment .syntax--markup.syntax--link {
   color: #5c6370;
 }
-.entity.name.type {
+.syntax--entity.syntax--name.syntax--type {
   color: #e5c07b;
 }
-.entity.other.inherited-class {
+.syntax--entity.syntax--other.syntax--inherited-class {
   color: #98c379;
 }
-.keyword {
+.syntax--keyword {
   color: #c678dd;
 }
-.keyword.control {
+.syntax--keyword.syntax--control {
   color: #c678dd;
 }
-.keyword.operator {
+.syntax--keyword.syntax--operator {
   color: #abb2bf;
 }
-.keyword.other.special-method {
+.syntax--keyword.syntax--other.syntax--special-method {
   color: #61afef;
 }
-.keyword.other.unit {
+.syntax--keyword.syntax--other.syntax--unit {
   color: #d19a66;
 }
-.storage {
+.syntax--storage {
   color: #c678dd;
 }
-.storage.type.annotation,
-.storage.type.primitive {
+.syntax--storage.syntax--type.syntax--annotation,
+.syntax--storage.syntax--type.syntax--primitive {
   color: #c678dd;
 }
-.storage.modifier.package,
-.storage.modifier.import {
+.syntax--storage.syntax--modifier.syntax--package,
+.syntax--storage.syntax--modifier.syntax--import {
   color: #abb2bf;
 }
-.constant {
+.syntax--constant {
   color: #d19a66;
 }
-.constant.variable {
+.syntax--constant.syntax--variable {
   color: #d19a66;
 }
-.constant.character.escape {
+.syntax--constant.syntax--character.syntax--escape {
   color: #56b6c2;
 }
-.constant.numeric {
+.syntax--constant.syntax--numeric {
   color: #d19a66;
 }
-.constant.other.color {
+.syntax--constant.syntax--other.syntax--color {
   color: #56b6c2;
 }
-.constant.other.symbol {
+.syntax--constant.syntax--other.syntax--symbol {
   color: #56b6c2;
 }
-.variable {
+.syntax--variable {
   color: #e06c75;
 }
-.variable.interpolation {
+.syntax--variable.syntax--interpolation {
   color: #be5046;
 }
-.variable.parameter {
+.syntax--variable.syntax--parameter {
   color: #abb2bf;
 }
-.string {
+.syntax--string {
   color: #98c379;
 }
-.string.regexp {
+.syntax--string.syntax--regexp {
   color: #56b6c2;
 }
-.string.regexp .source.ruby.embedded {
+.syntax--string.syntax--regexp .syntax--source.syntax--ruby.syntax--embedded {
   color: #e5c07b;
 }
-.string.other.link {
+.syntax--string.syntax--other.syntax--link {
   color: #e06c75;
 }
-.punctuation.definition.comment {
+.syntax--punctuation.syntax--definition.syntax--comment {
   color: #5c6370;
 }
-.punctuation.definition.method-parameters,
-.punctuation.definition.function-parameters,
-.punctuation.definition.parameters,
-.punctuation.definition.separator,
-.punctuation.definition.seperator,
-.punctuation.definition.array {
+.syntax--punctuation.syntax--definition.syntax--method-parameters,
+.syntax--punctuation.syntax--definition.syntax--function-parameters,
+.syntax--punctuation.syntax--definition.syntax--parameters,
+.syntax--punctuation.syntax--definition.syntax--separator,
+.syntax--punctuation.syntax--definition.syntax--seperator,
+.syntax--punctuation.syntax--definition.syntax--array {
   color: #abb2bf;
 }
-.punctuation.definition.heading,
-.punctuation.definition.identity {
+.syntax--punctuation.syntax--definition.syntax--heading,
+.syntax--punctuation.syntax--definition.syntax--identity {
   color: #61afef;
 }
-.punctuation.definition.bold {
+.syntax--punctuation.syntax--definition.syntax--bold {
   color: #e5c07b;
   font-weight: bold;
 }
-.punctuation.definition.italic {
+.syntax--punctuation.syntax--definition.syntax--italic {
   color: #c678dd;
   font-style: italic;
 }
-.punctuation.section.embedded {
+.syntax--punctuation.syntax--section.syntax--embedded {
   color: #be5046;
 }
-.punctuation.section.method,
-.punctuation.section.class,
-.punctuation.section.inner-class {
+.syntax--punctuation.syntax--section.syntax--method,
+.syntax--punctuation.syntax--section.syntax--class,
+.syntax--punctuation.syntax--section.syntax--inner-class {
   color: #abb2bf;
 }
-.support.class {
+.syntax--support.syntax--class {
   color: #e5c07b;
 }
-.support.type {
+.syntax--support.syntax--type {
   color: #56b6c2;
 }
-.support.function {
+.syntax--support.syntax--function {
   color: #56b6c2;
 }
-.support.function.any-method {
+.syntax--support.syntax--function.syntax--any-method {
   color: #61afef;
 }
-.entity.name.function {
+.syntax--entity.syntax--name.syntax--function {
   color: #61afef;
 }
-.entity.name.class,
-.entity.name.type.class {
+.syntax--entity.syntax--name.syntax--class,
+.syntax--entity.syntax--name.syntax--type.syntax--class {
   color: #e5c07b;
 }
-.entity.name.section {
+.syntax--entity.syntax--name.syntax--section {
   color: #61afef;
 }
-.entity.name.tag {
+.syntax--entity.syntax--name.syntax--tag {
   color: #e06c75;
 }
-.entity.other.attribute-name {
+.syntax--entity.syntax--other.syntax--attribute-name {
   color: #d19a66;
 }
-.entity.other.attribute-name.id {
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--id {
   color: #61afef;
 }
-.meta.class {
+.syntax--meta.syntax--class {
   color: #e5c07b;
 }
-.meta.class.body {
+.syntax--meta.syntax--class.syntax--body {
   color: #abb2bf;
 }
-.meta.method-call,
-.meta.method {
+.syntax--meta.syntax--method-call,
+.syntax--meta.syntax--method {
   color: #abb2bf;
 }
-.meta.definition.variable {
+.syntax--meta.syntax--definition.syntax--variable {
   color: #e06c75;
 }
-.meta.link {
+.syntax--meta.syntax--link {
   color: #d19a66;
 }
-.meta.require {
+.syntax--meta.syntax--require {
   color: #61afef;
 }
-.meta.selector {
+.syntax--meta.syntax--selector {
   color: #c678dd;
 }
-.meta.separator {
+.syntax--meta.syntax--separator {
   background-color: #373b41;
   color: #abb2bf;
 }
-.meta.tag {
+.syntax--meta.syntax--tag {
   color: #abb2bf;
 }
-.underline {
+.syntax--underline {
   text-decoration: underline;
 }
-.none {
+.syntax--none {
   color: #abb2bf;
 }
-.invalid.deprecated {
+.syntax--invalid.syntax--deprecated {
   color: #523d14 !important;
   background-color: #e0c285 !important;
 }
-.invalid.illegal {
+.syntax--invalid.syntax--illegal {
   color: #ffffff !important;
   background-color: #e05252 !important;
 }
-.markup.bold {
+.syntax--markup.syntax--bold {
   color: #d19a66;
   font-weight: bold;
 }
-.markup.changed {
+.syntax--markup.syntax--changed {
   color: #c678dd;
 }
-.markup.deleted {
+.syntax--markup.syntax--deleted {
   color: #e06c75;
 }
-.markup.italic {
+.syntax--markup.syntax--italic {
   color: #c678dd;
   font-style: italic;
 }
-.markup.heading {
+.syntax--markup.syntax--heading {
   color: #e06c75;
 }
-.markup.heading .punctuation.definition.heading {
+.syntax--markup.syntax--heading .syntax--punctuation.syntax--definition.syntax--heading {
   color: #61afef;
 }
-.markup.link {
+.syntax--markup.syntax--link {
   color: #c678dd;
 }
-.markup.inserted {
+.syntax--markup.syntax--inserted {
   color: #98c379;
 }
-.markup.quote {
+.syntax--markup.syntax--quote {
   color: #d19a66;
 }
-.markup.raw {
+.syntax--markup.syntax--raw {
   color: #98c379;
 }
-.source.c .keyword.operator {
+.syntax--source.syntax--c .syntax--keyword.syntax--operator {
   color: #c678dd;
 }
-.source.cpp .keyword.operator {
+.syntax--source.syntax--cpp .syntax--keyword.syntax--operator {
   color: #c678dd;
 }
-.source.cs .keyword.operator {
+.syntax--source.syntax--cs .syntax--keyword.syntax--operator {
   color: #c678dd;
 }
-.source.css .property-name,
-.source.css .property-value {
+.syntax--source.syntax--css .syntax--property-name,
+.syntax--source.syntax--css .syntax--property-value {
   color: #828997;
 }
-.source.css .property-name.support,
-.source.css .property-value.support {
+.syntax--source.syntax--css .syntax--property-name.syntax--support,
+.syntax--source.syntax--css .syntax--property-value.syntax--support {
   color: #abb2bf;
 }
-.source.gfm .markup {
+.syntax--source.syntax--gfm .syntax--markup {
   -webkit-font-smoothing: auto;
 }
-.source.gfm .link .entity {
+.syntax--source.syntax--gfm .syntax--link .syntax--entity {
   color: #61afef;
 }
-.source.go .storage.type.string {
+.syntax--source.syntax--go .syntax--storage.syntax--type.syntax--string {
   color: #c678dd;
 }
-.source.ini .keyword.other.definition.ini {
+.syntax--source.syntax--ini .syntax--keyword.syntax--other.syntax--definition.syntax--ini {
   color: #e06c75;
 }
-.source.java .storage.modifier.import {
+.syntax--source.syntax--java .syntax--storage.syntax--modifier.syntax--import {
   color: #e5c07b;
 }
-.source.java .storage.type {
+.syntax--source.syntax--java .syntax--storage.syntax--type {
   color: #e5c07b;
 }
-.source.java .keyword.operator.instanceof {
+.syntax--source.syntax--java .syntax--keyword.syntax--operator.syntax--instanceof {
   color: #c678dd;
 }
-.source.java-properties .meta.key-pair {
+.syntax--source.syntax--java-properties .syntax--meta.syntax--key-pair {
   color: #e06c75;
 }
-.source.java-properties .meta.key-pair > .punctuation {
+.syntax--source.syntax--java-properties .syntax--meta.syntax--key-pair > .syntax--punctuation {
   color: #abb2bf;
 }
-.source.js .keyword.operator {
+.syntax--source.syntax--js .syntax--keyword.syntax--operator {
   color: #56b6c2;
 }
-.source.js .keyword.operator.delete,
-.source.js .keyword.operator.in,
-.source.js .keyword.operator.of,
-.source.js .keyword.operator.instanceof,
-.source.js .keyword.operator.new,
-.source.js .keyword.operator.typeof,
-.source.js .keyword.operator.void {
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--delete,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--in,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--of,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--instanceof,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--new,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--typeof,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--void {
   color: #c678dd;
 }
-.source.json .meta.structure.dictionary.json > .string.quoted.json {
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--string.syntax--quoted.syntax--json {
   color: #e06c75;
 }
-.source.json .meta.structure.dictionary.json > .string.quoted.json > .punctuation.string {
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation.syntax--string {
   color: #e06c75;
 }
-.source.json .meta.structure.dictionary.json > .value.json > .string.quoted.json,
-.source.json .meta.structure.array.json > .value.json > .string.quoted.json,
-.source.json .meta.structure.dictionary.json > .value.json > .string.quoted.json > .punctuation,
-.source.json .meta.structure.array.json > .value.json > .string.quoted.json > .punctuation {
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation {
   color: #98c379;
 }
-.source.json .meta.structure.dictionary.json > .constant.language.json,
-.source.json .meta.structure.array.json > .constant.language.json {
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--constant.syntax--language.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--constant.syntax--language.syntax--json {
   color: #56b6c2;
 }
-.source.ruby .constant.other.symbol > .punctuation {
+.syntax--source.syntax--ruby .syntax--constant.syntax--other.syntax--symbol > .syntax--punctuation {
   color: inherit;
 }
-.source.python .keyword.operator.logical.python {
+.syntax--source.syntax--python .syntax--keyword.syntax--operator.syntax--logical.syntax--python {
   color: #c678dd;
 }
-.source.python .variable.parameter {
+.syntax--source.syntax--python .syntax--variable.syntax--parameter {
   color: #d19a66;
 }
 </style>
   </head>
   <body class='markdown-preview' data-use-github-style><h1 id="ca-descriptions-guide">CA Descriptions Guide</h1>
 <p><em>This guide assumes a working installation of CAPyLE</em></p>
-<h2 id="ca-descriptions-location">CA descriptions location</h2>
-<p>The example descriptions are located in <code style="font-family: Menlo;">[path_to_main_folder]/ca_descriptions/</code>.
-This is also where user defined descriptions should be created.</p>
-<h2 id="a-typical-ca-description">A typical CA description</h2>
-<p>These files are .py files that describe how a CA should be executed by the main software, and are in turn executed themselves.</p>
-<h3 id="required-in-a-ca-description-file">Required in a CA description file</h3>
-<p>At the head of the file, it is critical to define where the module &#39;capyle&#39;, and its submodules are. This is automatically inserted on creation of a new description.</p>
-<p>The main body of the file must contain 3 functions with the following arguments:</p>
-<ol>
-<li><code style="font-family: Menlo;">setup(args)</code><ul>
-<li>The function executed to set up the config object</li>
-</ul>
-</li>
-<li><code style="font-family: Menlo;">transition_function(grid, neighbourstates, neighbourcounts)</code><ul>
-<li>Define transition rules for the CA</li>
-<li>To keep track of variables (for example a counter for each grid item) append these arguments to the function arguments (eg. to keep track of decaygrid <code style="font-family: Menlo;">def transition_function(grid, neighbourstates, neighbourcounts, decaygrid):</code>. To see an example of this, see <a href="#Extra-variables">Extra variables</a> as discussed later.)</li>
-</ul>
-</li>
-<li><code style="font-family: Menlo;">main()</code><ul>
-<li>For main() to be executed when <code style="font-family: Menlo;">python yourdescription.py</code> is executed the following must be placed at the <em>bottom</em> of the file, as is standard practice in python files.<pre class="editor-colors lang-python"><div class="line"><span class="source python"><span class="keyword control conditional python"><span>if</span></span><span>&nbsp;</span><span class="support variable magic python"><span>__name__</span></span><span>&nbsp;</span><span class="keyword operator comparison python"><span>==</span></span><span>&nbsp;</span><span class="string quoted double single-line python"><span class="punctuation definition string begin python"><span>&quot;</span></span><span>__main__</span><span class="punctuation definition string end python"><span>&quot;</span></span></span><span>:</span></span></div><div class="line"><span class="source python"><span>&nbsp;</span><span class="meta function-call python"><span>main</span><span class="punctuation definition arguments begin python"><span>(</span></span><span class="punctuation definition arguments end python"><span>)</span></span></span></span></div></pre>
-</li>
-<li>This function will only require editing if initialising variables to keep track of (eg. the initial state of <code style="font-family: Menlo;">decaygrid</code> will be initialised in main. See <a href="#Extra-variables">Extra variables</a> below for an example of this)</li>
-</ul>
-</li>
-</ol>
-<h3 id="function-content">Function content</h3>
-<p>The main program runs these description files in two stages:</p>
+<h2 id="contents-">Contents:</h2>
 <ul>
-<li><p>&#39;Pre-run&#39; runs through only the <code style="font-family: Menlo;">setup</code> function of the module and saves the (CAConfig)[link here] object to disk, which is then instantly loaded by the main software.</p>
-<ul>
-<li>During this pre-run 3 parameters <em>must</em> be set:<pre class="editor-colors lang-python"><div class="line"><span class="source python"><span>config</span><span>.</span><span>title</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span class="string quoted double single-line python"><span class="punctuation definition string begin python"><span>&quot;</span></span><span>Your&nbsp;title&nbsp;here</span><span class="punctuation definition string end python"><span>&quot;</span></span></span><span>&nbsp;&nbsp;</span><span class="comment line number-sign python"><span class="punctuation definition comment python"><span>#</span></span><span>Give&nbsp;the&nbsp;CA&nbsp;a&nbsp;name</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span>config</span><span>.</span><span>dimensions</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span class="constant numeric integer decimal python"><span>2</span></span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment line number-sign python"><span class="punctuation definition comment python"><span>#</span></span><span>&nbsp;Define&nbsp;as&nbsp;a&nbsp;2D&nbsp;CA</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span>config</span><span>.</span><span>states</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span>(</span><span class="constant numeric integer decimal python"><span>0</span></span><span>,</span><span class="constant numeric integer decimal python"><span>1</span></span><span>)</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment line number-sign python"><span class="punctuation definition comment python"><span>#</span></span><span>&nbsp;States&nbsp;used&nbsp;are&nbsp;only&nbsp;0&nbsp;and&nbsp;1</span><span>&nbsp;</span></span></span></div></pre>
-</li>
-<li><p>Additionally the other config parameters may also be set to static values as below:</p>
-<p><em>Please note that as these additional parameters are being overridden at runtime, <em>the GUI will no longer have an effect</em> on the config parameters set by the user, in the description. To leave all parameters to be set by the gui, do not define any constants here</em></p>
-<pre class="editor-colors lang-python"><div class="line"><span class="source python"><span class="comment line number-sign python"><span class="punctuation definition comment python"><span>#</span></span><span>&nbsp;Always&nbsp;run&nbsp;100&nbsp;generations</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span>config</span><span>.</span><span>num_generations</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span class="constant numeric integer decimal python"><span>100</span></span></span></div><div class="line"><span class="source python"><span class="comment line number-sign python"><span class="punctuation definition comment python"><span>#</span></span><span>&nbsp;Initialise&nbsp;the&nbsp;colours&nbsp;to&nbsp;be&nbsp;black&nbsp;for&nbsp;state&nbsp;0&nbsp;and</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span class="comment line number-sign python"><span class="punctuation definition comment python"><span>#</span></span><span>&nbsp;a&nbsp;slightly&nbsp;off-white&nbsp;for&nbsp;state&nbsp;1</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span>config</span><span>.</span><span>state_colors</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span class="meta structure list python"><span class="punctuation definition list begin python"><span>[</span></span><span class="meta structure list item python"><span>(</span><span class="constant numeric integer decimal python"><span>0</span></span><span>,</span><span class="constant numeric integer decimal python"><span>0</span></span><span>,</span><span class="constant numeric integer decimal python"><span>0</span></span><span>)</span></span><span class="punctuation separator list python"><span>,</span></span><span>&nbsp;</span><span class="meta structure list item python"><span>(</span><span class="constant numeric float python"><span>0.8</span></span><span>,</span><span class="constant numeric float python"><span>0.8</span></span><span>,</span><span class="constant numeric float python"><span>0.8</span></span><span>)</span></span><span class="punctuation definition list end python"><span>]</span></span></span></span></div></pre>
+<li><a href="#the-caconfig-class">The CAConfig class</a></li>
+<li><a href="#ca-descriptions-location">Location and format</a></li>
+<li><a href="#required-in-a-ca-description-file">Description file requirements</a><ul>
+<li><a href="#functions">Required Functions</a><ul>
+<li><a href="#setup">Setup</a></li>
+<li><a href="#transition-function">Transition function</a></li>
+</ul>
 </li>
 </ul>
 </li>
-<li>&#39;Full-run&#39; runs the entire file all the way through, applying the transition function for every generation, and saving the output to a &#39;timeline&#39; file, which is saved to disk along with the config.</li>
+<li><a href="#creating-a-new-ca-description">Creating a new CA description</a></li>
 </ul>
-<h4 id="transition-function">Transition function</h4>
-<p>As the transition function will be invoked every timestep, it is important that it is written with performance as the number one priority; only numpy array operations be used. Examples of these can be seen in <code style="font-family: Menlo;">wolframs_1d.py</code> and <code style="font-family: Menlo;">gol_2d.py</code>, both of which are described below.</p>
-<p>A minimum of three arguments must be passed to the transition function;</p>
-<ol>
-<li><code style="font-family: Menlo;">grid</code> the current state of the grid</li>
-<li><code style="font-family: Menlo;">neighbourstates</code> the states of each neighbour</li>
-<li><code style="font-family: Menlo;">neighbourcounts</code> the number of neighbours of each state.
-<em>The transition funciton must return the new state of the grid</em></li>
-</ol>
-<h6 id="example-1-using-neighbourcounts">Example 1 - Using neighbourcounts</h6>
-<p>For example in a 2D CA (with states 0 and 1), if we wish to create a rule where the cell must be in state 1 and change to state 0 only if any 3 of its neighbours are in state 0 we would write:</p>
-<pre class="editor-colors lang-python"><div class="line"><span class="source python"><span>cells_in_state_1</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span>(</span><span>grid</span><span>&nbsp;</span><span class="keyword operator comparison python"><span>==</span></span><span>&nbsp;</span><span class="constant numeric integer decimal python"><span>1</span></span><span>)</span><span>&nbsp;</span><span class="comment line number-sign python"><span class="punctuation definition comment python"><span>#</span></span><span>&nbsp;cells&nbsp;that&nbsp;are&nbsp;currently&nbsp;in&nbsp;state&nbsp;1</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span>three_zero_neighbours</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span>(</span><span class="meta item-access python"><span>neighbourcounts</span><span class="punctuation definition arguments begin python"><span>[</span></span><span class="meta item-access arguments python"><span class="constant numeric integer decimal python"><span>0</span></span></span><span class="punctuation definition arguments end python"><span>]</span></span></span><span>&nbsp;</span><span class="keyword operator comparison python"><span>==</span></span><span>&nbsp;</span><span class="constant numeric integer decimal python"><span>3</span></span><span>)</span><span>&nbsp;</span><span class="comment line number-sign python"><span class="punctuation definition comment python"><span>#</span></span><span>&nbsp;cells&nbsp;that&nbsp;have&nbsp;3&nbsp;neighbours&nbsp;in&nbsp;state&nbsp;0</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span>to_zero</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span>cells_in_state_1</span><span>&nbsp;</span><span class="keyword operator arithmetic python"><span>&amp;</span><span>&amp;</span></span><span>&nbsp;</span><span>three_zero_neighbours</span></span></div><div class="line"><span class="source python"><span class="comment line number-sign python"><span class="punctuation definition comment python"><span>#</span></span><span>&nbsp;cells&nbsp;that&nbsp;are&nbsp;currently&nbsp;in&nbsp;state&nbsp;1&nbsp;and&nbsp;have&nbsp;exactly&nbsp;three&nbsp;neighbours&nbsp;in&nbsp;state&nbsp;0</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span class="comment line number-sign python"><span class="punctuation definition comment python"><span>#</span></span><span>&nbsp;are&nbsp;set&nbsp;to&nbsp;zero</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span class="meta item-access python"><span>grid</span><span class="punctuation definition arguments begin python"><span>[</span></span><span class="meta item-access arguments python"><span>to_zero</span></span><span class="punctuation definition arguments end python"><span>]</span></span></span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span class="constant numeric integer decimal python"><span>0</span></span></span></div></pre>
-<p>The <code style="font-family: Menlo;">cells_in_state_1</code> computation creates a boolean array where only where 1 exists on the grid is True. Another boolean array is computed where the <code style="font-family: Menlo;">neighbourcounts</code> of state 0 is 3, so only those cells that have 3 surrounding neighbours currently in state 0 are set to True, and False otherwise. These two boolean arrays are then union-ed together so only the cells where True is in the same position in both arrays becomes True, this result is then stored in <code style="font-family: Menlo;">to_zero</code>. This boolean array is then used as indices for which cells need to undergo the change (numpy ignores the 0 or False entries when a boolean array of matching shape is supplied as indices). So only those indices where <em>both</em> conditions of the rule are satisfied undergo the change.</p>
-<h6 id="example-2-using-neighbourstates">Example 2 - Using neighbourstates</h6>
-<p>If you wish to create rules that require more precision than simply &#39;any x cells in the neighbourhood&#39; and need to check the state of specific cells, this can be achieved through using the <code style="font-family: Menlo;">neighbourstates</code> argument.</p>
-<p>In a 2D CA the <code style="font-family: Menlo;">neighbourstates</code> variable contains the states of the surrounding 8 cells in the order [NW, N, NE, W, E, SW, S, SE] (like reading the neighbourhood left to right).</p>
-<p>For example in a 2D CA with states (0,1,2,3)
-To create a rule where if the cell is in state 3 and the corner neighbours are all in states above 1, then transition to state 1:</p>
-<pre class="editor-colors lang-python"><div class="line"><span class="source python"><span class="comment line number-sign python"><span class="punctuation definition comment python"><span>#</span></span><span>&nbsp;unpack&nbsp;the&nbsp;state&nbsp;arrays</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span>NW</span><span>,&nbsp;</span><span>N</span><span>,&nbsp;</span><span>NE</span><span>,&nbsp;</span><span>W</span><span>,&nbsp;</span><span>E</span><span>,&nbsp;</span><span>SW</span><span>,&nbsp;</span><span>S</span><span>,&nbsp;</span><span>SE</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span>neighbourstates</span></span></div><div class="line"><span class="source python"><span>in_state_3</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span>(</span><span>grid</span><span>&nbsp;</span><span class="keyword operator comparison python"><span>==</span></span><span>&nbsp;</span><span class="constant numeric integer decimal python"><span>3</span></span><span>)</span><span>&nbsp;</span><span class="comment line number-sign python"><span class="punctuation definition comment python"><span>#</span></span><span>&nbsp;cells&nbsp;currently&nbsp;in&nbsp;state&nbsp;3</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span>all_corners_above_1</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span>(</span><span>NW</span><span>&nbsp;</span><span class="keyword operator comparison python"><span>&gt;</span></span><span>&nbsp;</span><span class="constant numeric integer decimal python"><span>1</span></span><span>)</span><span>&nbsp;</span><span class="keyword operator arithmetic python"><span>&amp;</span><span>&amp;</span></span><span>&nbsp;</span><span>(</span><span>NE</span><span>&nbsp;</span><span class="keyword operator comparison python"><span>&gt;</span></span><span>&nbsp;</span><span class="constant numeric integer decimal python"><span>1</span></span><span>)</span><span>&nbsp;</span><span class="keyword operator arithmetic python"><span>&amp;</span><span>&amp;</span></span><span>&nbsp;</span><span>(</span><span>SW</span><span>&nbsp;</span><span class="keyword operator comparison python"><span>&gt;</span></span><span>&nbsp;</span><span class="constant numeric integer decimal python"><span>1</span></span><span>)</span><span>&nbsp;</span><span class="keyword operator arithmetic python"><span>&amp;</span><span>&amp;</span></span><span>&nbsp;</span><span>(</span><span>SE</span><span>&nbsp;</span><span class="keyword operator comparison python"><span>&gt;</span></span><span>&nbsp;</span><span class="constant numeric integer decimal python"><span>1</span></span><span>)</span><span>&nbsp;</span><span class="comment line number-sign python"><span class="punctuation definition comment python"><span>#</span></span><span>&nbsp;corner&nbsp;states&nbsp;&gt;&nbsp;1</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span>to_one</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span>in_state_3</span><span>&nbsp;</span><span class="keyword operator arithmetic python"><span>&amp;</span><span>&amp;</span></span><span>&nbsp;</span><span>all_corners_above_1</span><span>&nbsp;</span><span class="comment line number-sign python"><span class="punctuation definition comment python"><span>#</span></span><span>&nbsp;union&nbsp;the&nbsp;results</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span class="meta item-access python"><span>grid</span><span class="punctuation definition arguments begin python"><span>[</span></span><span class="meta item-access arguments python"><span>to_one</span></span><span class="punctuation definition arguments end python"><span>]</span></span></span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span class="constant numeric integer decimal python"><span>1</span></span></span></div></pre>
-<p>Of course you are not limited to using either, feel free to mix and match if it is required.</p>
-<h5 id="important-notes">Important notes</h5>
-<p>You may wish to experiment creating and manipulating numpy arrays in this manner in a separate file before writing your transition function.</p>
-<p>It is recommended that you perform all of the rule calculations, before performing the rule applications. For example if I wished to perform both of the rules above, I would calculate both <code style="font-family: Menlo;">to_zero</code> and <code style="font-family: Menlo;">to_one</code> first, then apply the rules using <code style="font-family: Menlo;">grid[to_zero] = 0; grid[to_one] = 1</code> then return the grid with <code style="font-family: Menlo;">return grid</code>. This ensures that you are applying your rules on the current time step t.</p>
-<p>You might like to consider that you &#39;clear&#39; your grid before applying any changes to avoid mistakes. For example <code style="font-family: Menlo;">grid[:, :] = 0</code> then <code style="font-family: Menlo;">grid[to_one] = 1</code>, to set everything to 0 then only those which have been calculated to 1.</p>
-<p><em>You may instead make a copy of the initial grid and apply your transitions to the copy on the fly, then return it, but ensure to make a deep copy with np.copy()</em></p>
-<h5 id="extra-variables">Extra variables</h5>
-<p>It is common to keep track of and manipulate variables during runtime, like staying in one state for a set number of generations, and then changing state after these generations have passed. To achieve this, add these extra variables to the arguments of your transition function, and instead of passing your transition_function to the Grid constructor, pass a tuple of your transition function and these extra variables eg. <code style="font-family: Menlo;">(transition_function, extravar1, extravar2,...)</code>. See the example below:</p>
-<p>After 2 timesteps cells in state 1 decay to state 0 in a 2D CA with states (0,1):</p>
-<pre class="editor-colors lang-python"><div class="line"><span class="source python"><span>...</span></span></div><div class="line"><span class="source python"><span class="meta function python"><span class="storage type function python"><span>def</span></span><span>&nbsp;</span><span class="entity name function python"><span>transition_function</span></span><span class="punctuation definition parameters begin python"><span>(</span></span><span class="meta function parameters python"><span class="variable parameter function python"><span>grid</span></span><span class="punctuation separator parameters python"><span>,</span></span><span>&nbsp;</span><span class="variable parameter function python"><span>neighbourstates</span></span><span class="punctuation separator parameters python"><span>,</span></span><span>&nbsp;</span><span class="variable parameter function python"><span>neighbourcounts</span></span><span class="punctuation separator parameters python"><span>,</span></span><span>&nbsp;</span><span class="variable parameter function python"><span>decaygrid</span></span></span><span class="punctuation definition parameters end python"><span>)</span></span><span class="punctuation section function begin python"><span>:</span></span></span></span></div><div class="line"><span class="source python"><span>&nbsp;&nbsp;</span><span>cells_in_state_1</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span>(</span><span>grid</span><span>&nbsp;</span><span class="keyword operator comparison python"><span>==</span></span><span>&nbsp;</span><span class="constant numeric integer decimal python"><span>1</span></span><span>)</span><span>&nbsp;</span><span class="comment line number-sign python"><span class="punctuation definition comment python"><span>#</span></span><span>&nbsp;cells&nbsp;in&nbsp;state&nbsp;1</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span>&nbsp;&nbsp;</span><span class="meta item-access python"><span>decaygrid</span><span class="punctuation definition arguments begin python"><span>[</span></span><span class="meta item-access arguments python"><span>cells_in_state_1</span></span><span class="punctuation definition arguments end python"><span>]</span></span></span><span>&nbsp;</span><span class="keyword operator assignment augmented python"><span>-=</span></span><span>&nbsp;</span><span class="constant numeric integer decimal python"><span>1</span></span><span>&nbsp;</span><span class="comment line number-sign python"><span class="punctuation definition comment python"><span>#</span></span><span>&nbsp;take&nbsp;one&nbsp;off&nbsp;their&nbsp;decay&nbsp;value</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span class="punctuation whitespace comment leading python"><span>&nbsp;&nbsp;</span></span><span class="comment line number-sign python"><span class="punctuation definition comment python"><span>#</span></span><span>&nbsp;the&nbsp;above&nbsp;line&nbsp;*must*&nbsp;save&nbsp;any&nbsp;changes&nbsp;to&nbsp;the&nbsp;decaygrid&nbsp;else&nbsp;they&nbsp;will&nbsp;not&nbsp;persist</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span class="punctuation whitespace comment leading python"><span>&nbsp;&nbsp;</span></span><span class="comment line number-sign python"><span class="punctuation definition comment python"><span>#</span></span><span>&nbsp;to&nbsp;the&nbsp;next&nbsp;timestep</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span>&nbsp;</span></span></div><div class="line"><span class="source python"><span>&nbsp;&nbsp;</span><span>decayed_to_zero</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span>(</span><span>decaygrid</span><span>&nbsp;</span><span class="keyword operator comparison python"><span>==</span></span><span>&nbsp;</span><span class="constant numeric integer decimal python"><span>0</span></span><span>)</span><span>&nbsp;</span><span class="comment line number-sign python"><span class="punctuation definition comment python"><span>#</span></span><span>&nbsp;find&nbsp;those&nbsp;which&nbsp;have&nbsp;decayed&nbsp;to&nbsp;0</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span>&nbsp;&nbsp;</span><span class="meta item-access python"><span>grid</span><span class="punctuation definition arguments begin python"><span>[</span></span><span class="meta item-access arguments python"><span>decayed_to_zero</span></span><span class="punctuation definition arguments end python"><span>]</span></span></span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span class="constant numeric integer decimal python"><span>0</span></span><span>&nbsp;</span><span class="comment line number-sign python"><span class="punctuation definition comment python"><span>#</span></span><span>&nbsp;switch&nbsp;their&nbsp;state&nbsp;to&nbsp;0</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span>&nbsp;&nbsp;</span><span class="keyword control statement python"><span>return</span></span><span>&nbsp;</span><span>grid</span></span></div><div class="line"><span class="source python"><span>...</span></span></div><div class="line"><span class="source python"><span class="meta function python"><span class="storage type function python"><span>def</span></span><span>&nbsp;</span><span class="entity name function python"><span>main</span></span><span class="punctuation definition parameters begin python"><span>(</span></span><span class="punctuation definition parameters end python"><span>)</span></span><span class="punctuation section function begin python"><span>:</span></span></span></span></div><div class="line"><span class="source python"><span>&nbsp;&nbsp;...</span></span></div><div class="line"><span class="source python"><span>&nbsp;&nbsp;</span><span>decaygrid</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span class="meta function-call python"><span>np</span><span>.</span><span>zeros</span><span class="punctuation definition arguments begin python"><span>(</span></span><span class="meta function-call arguments python"><span>config</span><span>.</span><span>grid_dims</span></span><span class="punctuation definition arguments end python"><span>)</span></span></span></span></div><div class="line"><span class="source python"><span>&nbsp;&nbsp;</span><span class="meta function-call python"><span>decaygrid</span><span>.</span><span>fill</span><span class="punctuation definition arguments begin python"><span>(</span></span><span class="meta function-call arguments python"><span class="constant numeric integer decimal python"><span>2</span></span></span><span class="punctuation definition arguments end python"><span>)</span></span></span></span></div><div class="line"><span class="source python"><span>&nbsp;&nbsp;</span><span>grid</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span class="meta function-call python"><span>Grid2D</span><span class="punctuation definition arguments begin python"><span>(</span></span><span class="meta function-call arguments python"><span>config</span><span>,&nbsp;</span><span>(</span><span>transition_function</span><span>,&nbsp;</span><span>decaygrid</span><span>)</span></span><span class="punctuation definition arguments end python"><span>)</span></span></span></span></div><div class="line"><span class="source python"><span class="punctuation whitespace comment leading python"><span>&nbsp;&nbsp;</span></span><span class="comment line number-sign python"><span class="punctuation definition comment python"><span>#</span></span><span>&nbsp;the&nbsp;usual&nbsp;constructor&nbsp;would&nbsp;be&nbsp;Grid2D(config,&nbsp;transition_function)</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span>&nbsp;&nbsp;</span><span>timeline</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span class="meta function-call python"><span>grid</span><span>.</span><span>run</span><span class="punctuation definition arguments begin python"><span>(</span></span><span class="punctuation definition arguments end python"><span>)</span></span></span></span></div><div class="line"><span class="source python"><span>&nbsp;&nbsp;...</span></span></div><div class="line"><span class="source python"><span>...</span></span></div></pre>
 <h2 id="the-caconfig-class">The CAConfig Class</h2>
 <p>This class is available in <code style="font-family: Menlo;">capyle.ca</code> and is used to transport CA parameters round the internal system. A whole instance of the class can be serialised using pickle and it simplifies dealing with 5+ Grid constructor arguments. Below are the variables that you may need to understand, if you wish to override the GUI within your description.</p>
 <p>All functions and methods are accessed by using the . operator on an instance of CAConfig. Eg. <code style="font-family: Menlo;">config.states = (0,1)</code></p>
@@ -667,6 +590,75 @@ To create a rule where if the cell is in state 3 and the corner neighbours are a
 </tbody>
 </table>
 <p>For more detail, see the <a href="http://pjworsley.github.io/capyle/docs/">API documentation</a>.</p>
+<h2 id="ca-descriptions-location">CA descriptions location</h2>
+<p>The example descriptions are located in <code style="font-family: Menlo;">[path_to_main_folder]/ca_descriptions/</code>.
+This is also where user defined descriptions should be created.
+These files are .py files that describe how a CA should be executed by the main software.</p>
+<h2 id="required-in-a-ca-description-file">Required in a CA description file</h2>
+<p>At the head of the file, it is critical to define where the module &#39;capyle&#39; and its submodules are (by editing sys.path). This is automatically inserted on creation of a new description.</p>
+<h3 id="functions">Functions</h3>
+<p>The main body of the file must contain 3 functions with the following arguments:</p>
+<ol>
+<li><code style="font-family: Menlo;">setup(args)</code><ul>
+<li>The function executed to set up the config object</li>
+</ul>
+</li>
+<li><code style="font-family: Menlo;">transition_function(grid, neighbourstates, neighbourcounts)</code><ul>
+<li>Define transition rules for the CA</li>
+<li>To keep track of variables (for example a counter for each grid item) append these arguments to the function arguments (eg. to keep track of decaygrid <code style="font-family: Menlo;">def transition_function(grid, neighbourstates, neighbourcounts, decaygrid):</code>. To see an example of this, see <a href="#extra-variables">Extra variables</a> as discussed later.)</li>
+</ul>
+</li>
+<li><code style="font-family: Menlo;">main()</code><ul>
+<li>For main() to be executed when <code style="font-family: Menlo;">python yourdescription.py</code> is executed the following must be placed at the <em>bottom</em> of the file, as is standard practice in python files.<pre class="editor-colors lang-python"><div class="line"><span class="syntax--source syntax--python"><span class="syntax--keyword syntax--control syntax--conditional syntax--python"><span>if</span></span><span>&nbsp;</span><span class="syntax--support syntax--variable syntax--magic syntax--python"><span>__name__</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--python"><span>==</span></span><span>&nbsp;</span><span class="syntax--string syntax--quoted syntax--double syntax--single-line syntax--python"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--python"><span>&quot;</span></span><span>__main__</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--python"><span>&quot;</span></span></span><span>:</span></span></div><div class="line"><span class="syntax--source syntax--python"><span>&nbsp;</span><span class="syntax--meta syntax--function-call syntax--python"><span>main</span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--python"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--python"><span>)</span></span></span></span></div></pre>
+</li>
+<li>This function will only require editing if initialising variables to keep track of (eg. the initial state of <code style="font-family: Menlo;">decaygrid</code> will be initialised in main. See <a href="#extra-variables">Extra variables</a> below for an example of this)</li>
+</ul>
+</li>
+</ol>
+<h4 id="setup">Setup</h4>
+<p>The main program runs these description files in two stages:</p>
+<ul>
+<li><p>&#39;Pre-run&#39; runs through only the <code style="font-family: Menlo;">setup</code> function of the module and saves the (CAConfig)[link here] object to disk, which is then instantly loaded by the main software.</p>
+<ul>
+<li>During this pre-run 3 parameters <em>must</em> be set:<pre class="editor-colors lang-python"><div class="line"><span class="syntax--source syntax--python"><span>config</span><span>.</span><span>title</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span>&nbsp;</span><span class="syntax--string syntax--quoted syntax--double syntax--single-line syntax--python"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--python"><span>&quot;</span></span><span>Your&nbsp;title&nbsp;here</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--python"><span>&quot;</span></span></span><span>&nbsp;&nbsp;</span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span>Give&nbsp;the&nbsp;CA&nbsp;a&nbsp;name</span><span>&nbsp;</span></span></span></div><div class="line"><span class="syntax--source syntax--python"><span>config</span><span>.</span><span>dimensions</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>2</span></span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span>&nbsp;Define&nbsp;as&nbsp;a&nbsp;2D&nbsp;CA</span><span>&nbsp;</span></span></span></div><div class="line"><span class="syntax--source syntax--python"><span>config</span><span>.</span><span>states</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span>&nbsp;</span><span>(</span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>0</span></span><span>,</span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>1</span></span><span>)</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span>&nbsp;States&nbsp;used&nbsp;are&nbsp;only&nbsp;0&nbsp;and&nbsp;1</span><span>&nbsp;</span></span></span></div></pre>
+</li>
+<li><p>Additionally the other config parameters may also be set to static values as below:</p>
+<p><em>Please note that as these additional parameters are being overridden at runtime, <em>the GUI will no longer have an effect</em> on the config parameters set by the user, in the description. To leave all parameters to be set by the gui, do not define any constants here</em></p>
+<pre class="editor-colors lang-python"><div class="line"><span class="syntax--source syntax--python"><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span>&nbsp;Always&nbsp;run&nbsp;100&nbsp;generations</span><span>&nbsp;</span></span></span></div><div class="line"><span class="syntax--source syntax--python"><span>config</span><span>.</span><span>num_generations</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>100</span></span></span></div><div class="line"><span class="syntax--source syntax--python"><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span>&nbsp;Initialise&nbsp;the&nbsp;colours&nbsp;to&nbsp;be&nbsp;black&nbsp;for&nbsp;state&nbsp;0&nbsp;and</span><span>&nbsp;</span></span></span></div><div class="line"><span class="syntax--source syntax--python"><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span>&nbsp;a&nbsp;slightly&nbsp;off-white&nbsp;for&nbsp;state&nbsp;1</span><span>&nbsp;</span></span></span></div><div class="line"><span class="syntax--source syntax--python"><span>config</span><span>.</span><span>state_colors</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span>&nbsp;</span><span class="syntax--meta syntax--structure syntax--list syntax--python"><span class="syntax--punctuation syntax--definition syntax--list syntax--begin syntax--python"><span>[</span></span><span class="syntax--meta syntax--structure syntax--list syntax--item syntax--python"><span>(</span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>0</span></span><span>,</span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>0</span></span><span>,</span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>0</span></span><span>)</span></span><span class="syntax--punctuation syntax--separator syntax--list syntax--python"><span>,</span></span><span>&nbsp;</span><span class="syntax--meta syntax--structure syntax--list syntax--item syntax--python"><span>(</span><span class="syntax--constant syntax--numeric syntax--float syntax--python"><span>0.8</span></span><span>,</span><span class="syntax--constant syntax--numeric syntax--float syntax--python"><span>0.8</span></span><span>,</span><span class="syntax--constant syntax--numeric syntax--float syntax--python"><span>0.8</span></span><span>)</span></span><span class="syntax--punctuation syntax--definition syntax--list syntax--end syntax--python"><span>]</span></span></span></span></div></pre>
+</li>
+</ul>
+</li>
+<li>&#39;Full-run&#39; runs the entire file all the way through, applying the transition function for every generation, and saving the output to a &#39;timeline&#39; file, which is saved to disk along with the config.</li>
+</ul>
+<h4 id="transition-function">Transition function</h4>
+<p>As the transition function will be invoked every timestep, it is important that it is written with performance as the number one priority; only numpy array operations be used. Examples of these can be seen in <code style="font-family: Menlo;">wolframs_1d.py</code> and <code style="font-family: Menlo;">gol_2d.py</code>, both of which are described below.</p>
+<p>A minimum of three arguments must be passed to the transition function;</p>
+<ol>
+<li><code style="font-family: Menlo;">grid</code> the current state of the grid</li>
+<li><code style="font-family: Menlo;">neighbourstates</code> the states of each neighbour</li>
+<li><code style="font-family: Menlo;">neighbourcounts</code> the number of neighbours of each state.
+<em>The transition funciton must return the new state of the grid</em></li>
+</ol>
+<h6 id="example-1-using-neighbourcounts">Example 1 - Using neighbourcounts</h6>
+<p>For example in a 2D CA (with states 0 and 1), if we wish to create a rule where the cell must be in state 1 and change to state 0 only if any 3 of its neighbours are in state 0 we would write:</p>
+<pre class="editor-colors lang-python"><div class="line"><span class="syntax--source syntax--python"><span>cells_in_state_1</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span>&nbsp;</span><span>(</span><span>grid</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--python"><span>==</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>1</span></span><span>)</span><span>&nbsp;</span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span>&nbsp;cells&nbsp;that&nbsp;are&nbsp;currently&nbsp;in&nbsp;state&nbsp;1</span><span>&nbsp;</span></span></span></div><div class="line"><span class="syntax--source syntax--python"><span>three_zero_neighbours</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span>&nbsp;</span><span>(</span><span class="syntax--meta syntax--item-access syntax--python"><span>neighbourcounts</span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--python"><span>[</span></span><span class="syntax--meta syntax--item-access syntax--arguments syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>0</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--python"><span>]</span></span></span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--python"><span>==</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>3</span></span><span>)</span><span>&nbsp;</span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span>&nbsp;cells&nbsp;that&nbsp;have&nbsp;3&nbsp;neighbours&nbsp;in&nbsp;state&nbsp;0</span><span>&nbsp;</span></span></span></div><div class="line"><span class="syntax--source syntax--python"><span>to_zero</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span>&nbsp;</span><span>cells_in_state_1</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--arithmetic syntax--python"><span>&amp;</span><span>&amp;</span></span><span>&nbsp;</span><span>three_zero_neighbours</span></span></div><div class="line"><span class="syntax--source syntax--python"><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span>&nbsp;cells&nbsp;that&nbsp;are&nbsp;currently&nbsp;in&nbsp;state&nbsp;1&nbsp;and&nbsp;have&nbsp;exactly&nbsp;three&nbsp;neighbours&nbsp;in&nbsp;state&nbsp;0</span><span>&nbsp;</span></span></span></div><div class="line"><span class="syntax--source syntax--python"><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span>&nbsp;are&nbsp;set&nbsp;to&nbsp;zero</span><span>&nbsp;</span></span></span></div><div class="line"><span class="syntax--source syntax--python"><span class="syntax--meta syntax--item-access syntax--python"><span>grid</span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--python"><span>[</span></span><span class="syntax--meta syntax--item-access syntax--arguments syntax--python"><span>to_zero</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--python"><span>]</span></span></span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>0</span></span></span></div></pre>
+<p>The <code style="font-family: Menlo;">cells_in_state_1</code> computation creates a boolean array where only where 1 exists on the grid is True. Another boolean array is computed where the <code style="font-family: Menlo;">neighbourcounts</code> of state 0 is 3, so only those cells that have 3 surrounding neighbours currently in state 0 are set to True, and False otherwise. These two boolean arrays are then union-ed together so only the cells where True is in the same position in both arrays becomes True, this result is then stored in <code style="font-family: Menlo;">to_zero</code>. This boolean array is then used as indices for which cells need to undergo the change (numpy ignores the 0 or False entries when a boolean array of matching shape is supplied as indices). So only those indices where <em>both</em> conditions of the rule are satisfied undergo the change.</p>
+<h6 id="example-2-using-neighbourstates">Example 2 - Using neighbourstates</h6>
+<p>If you wish to create rules that require more precision than simply &#39;any x cells in the neighbourhood&#39; and need to check the state of specific cells, this can be achieved through using the <code style="font-family: Menlo;">neighbourstates</code> argument.</p>
+<p>In a 2D CA the <code style="font-family: Menlo;">neighbourstates</code> variable contains the states of the surrounding 8 cells in the order [NW, N, NE, W, E, SW, S, SE] (like reading the neighbourhood left to right).</p>
+<p>For example in a 2D CA with states (0,1,2,3)
+To create a rule where if the cell is in state 3 and the corner neighbours are all in states above 1, then transition to state 1:</p>
+<pre class="editor-colors lang-python"><div class="line"><span class="syntax--source syntax--python"><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span>&nbsp;unpack&nbsp;the&nbsp;state&nbsp;arrays</span><span>&nbsp;</span></span></span></div><div class="line"><span class="syntax--source syntax--python"><span>NW</span><span>,&nbsp;</span><span>N</span><span>,&nbsp;</span><span>NE</span><span>,&nbsp;</span><span>W</span><span>,&nbsp;</span><span>E</span><span>,&nbsp;</span><span>SW</span><span>,&nbsp;</span><span>S</span><span>,&nbsp;</span><span>SE</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span>&nbsp;</span><span>neighbourstates</span></span></div><div class="line"><span class="syntax--source syntax--python"><span>in_state_3</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span>&nbsp;</span><span>(</span><span>grid</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--python"><span>==</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>3</span></span><span>)</span><span>&nbsp;</span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span>&nbsp;cells&nbsp;currently&nbsp;in&nbsp;state&nbsp;3</span><span>&nbsp;</span></span></span></div><div class="line"><span class="syntax--source syntax--python"><span>all_corners_above_1</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span>&nbsp;</span><span>(</span><span>NW</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--python"><span>&gt;</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>1</span></span><span>)</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--arithmetic syntax--python"><span>&amp;</span><span>&amp;</span></span><span>&nbsp;</span><span>(</span><span>NE</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--python"><span>&gt;</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>1</span></span><span>)</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--arithmetic syntax--python"><span>&amp;</span><span>&amp;</span></span><span>&nbsp;</span><span>(</span><span>SW</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--python"><span>&gt;</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>1</span></span><span>)</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--arithmetic syntax--python"><span>&amp;</span><span>&amp;</span></span><span>&nbsp;</span><span>(</span><span>SE</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--python"><span>&gt;</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>1</span></span><span>)</span><span>&nbsp;</span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span>&nbsp;corner&nbsp;states&nbsp;&gt;&nbsp;1</span><span>&nbsp;</span></span></span></div><div class="line"><span class="syntax--source syntax--python"><span>to_one</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span>&nbsp;</span><span>in_state_3</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--arithmetic syntax--python"><span>&amp;</span><span>&amp;</span></span><span>&nbsp;</span><span>all_corners_above_1</span><span>&nbsp;</span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span>&nbsp;union&nbsp;the&nbsp;results</span><span>&nbsp;</span></span></span></div><div class="line"><span class="syntax--source syntax--python"><span class="syntax--meta syntax--item-access syntax--python"><span>grid</span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--python"><span>[</span></span><span class="syntax--meta syntax--item-access syntax--arguments syntax--python"><span>to_one</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--python"><span>]</span></span></span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>1</span></span></span></div></pre>
+<p>Of course you are not limited to using either, feel free to mix and match if it is required.</p>
+<h5 id="important-notes">Important notes</h5>
+<p>You may wish to experiment creating and manipulating numpy arrays in this manner in a separate file before writing your transition function.</p>
+<p>It is recommended that you perform all of the rule calculations, before performing the rule applications. For example if I wished to perform both of the rules above, I would calculate both <code style="font-family: Menlo;">to_zero</code> and <code style="font-family: Menlo;">to_one</code> first, then apply the rules using <code style="font-family: Menlo;">grid[to_zero] = 0; grid[to_one] = 1</code> then return the grid with <code style="font-family: Menlo;">return grid</code>. This ensures that you are applying your rules on the current time step t.</p>
+<p>You might like to consider that you &#39;clear&#39; your grid before applying any changes to avoid mistakes. For example <code style="font-family: Menlo;">grid[:, :] = 0</code> then <code style="font-family: Menlo;">grid[to_one] = 1</code>, to set everything to 0 then only those which have been calculated to 1.</p>
+<p><em>You may instead make a copy of the initial grid and apply your transitions to the copy on the fly, then return it, but ensure to make a deep copy with np.copy()</em></p>
+<h5 id="extra-variables">Extra variables</h5>
+<p>It is common to keep track of and manipulate variables during runtime, like staying in one state for a set number of generations, and then changing state after these generations have passed. To achieve this, add these extra variables to the arguments of your transition function, and instead of passing your transition_function to the Grid constructor, pass a tuple of your transition function and these extra variables eg. <code style="font-family: Menlo;">(transition_function, extravar1, extravar2,...)</code>. See the example below:</p>
+<p>After 2 timesteps cells in state 1 decay to state 0 in a 2D CA with states (0,1):</p>
+<pre class="editor-colors lang-python"><div class="line"><span class="syntax--source syntax--python"><span>...</span></span></div><div class="line"><span class="syntax--source syntax--python"><span class="syntax--meta syntax--function syntax--python"><span class="syntax--storage syntax--type syntax--function syntax--python"><span>def</span></span><span>&nbsp;</span><span class="syntax--entity syntax--name syntax--function syntax--python"><span>transition_function</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--python"><span>(</span></span><span class="syntax--meta syntax--function syntax--parameters syntax--python"><span class="syntax--variable syntax--parameter syntax--function syntax--python"><span>grid</span></span><span class="syntax--punctuation syntax--separator syntax--parameters syntax--python"><span>,</span></span><span>&nbsp;</span><span class="syntax--variable syntax--parameter syntax--function syntax--python"><span>neighbourstates</span></span><span class="syntax--punctuation syntax--separator syntax--parameters syntax--python"><span>,</span></span><span>&nbsp;</span><span class="syntax--variable syntax--parameter syntax--function syntax--python"><span>neighbourcounts</span></span><span class="syntax--punctuation syntax--separator syntax--parameters syntax--python"><span>,</span></span><span>&nbsp;</span><span class="syntax--variable syntax--parameter syntax--function syntax--python"><span>decaygrid</span></span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--python"><span>)</span></span><span class="syntax--punctuation syntax--section syntax--function syntax--begin syntax--python"><span>:</span></span></span></span></div><div class="line"><span class="syntax--source syntax--python"><span>&nbsp;&nbsp;</span><span>cells_in_state_1</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span>&nbsp;</span><span>(</span><span>grid</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--python"><span>==</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>1</span></span><span>)</span><span>&nbsp;</span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span>&nbsp;cells&nbsp;in&nbsp;state&nbsp;1</span><span>&nbsp;</span></span></span></div><div class="line"><span class="syntax--source syntax--python"><span>&nbsp;&nbsp;</span><span class="syntax--meta syntax--item-access syntax--python"><span>decaygrid</span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--python"><span>[</span></span><span class="syntax--meta syntax--item-access syntax--arguments syntax--python"><span>cells_in_state_1</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--python"><span>]</span></span></span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--augmented syntax--python"><span>-=</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>1</span></span><span>&nbsp;</span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span>&nbsp;take&nbsp;one&nbsp;off&nbsp;their&nbsp;decay&nbsp;value</span><span>&nbsp;</span></span></span></div><div class="line"><span class="syntax--source syntax--python"><span class="syntax--punctuation syntax--whitespace syntax--comment syntax--leading syntax--python"><span>&nbsp;&nbsp;</span></span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span>&nbsp;the&nbsp;above&nbsp;line&nbsp;*must*&nbsp;save&nbsp;any&nbsp;changes&nbsp;to&nbsp;the&nbsp;decaygrid&nbsp;else&nbsp;they&nbsp;will&nbsp;not&nbsp;persist</span><span>&nbsp;</span></span></span></div><div class="line"><span class="syntax--source syntax--python"><span class="syntax--punctuation syntax--whitespace syntax--comment syntax--leading syntax--python"><span>&nbsp;&nbsp;</span></span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span>&nbsp;to&nbsp;the&nbsp;next&nbsp;timestep</span><span>&nbsp;</span></span></span></div><div class="line"><span class="syntax--source syntax--python"><span>&nbsp;</span></span></div><div class="line"><span class="syntax--source syntax--python"><span>&nbsp;&nbsp;</span><span>decayed_to_zero</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span>&nbsp;</span><span>(</span><span>decaygrid</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--python"><span>==</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>0</span></span><span>)</span><span>&nbsp;</span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span>&nbsp;find&nbsp;those&nbsp;which&nbsp;have&nbsp;decayed&nbsp;to&nbsp;0</span><span>&nbsp;</span></span></span></div><div class="line"><span class="syntax--source syntax--python"><span>&nbsp;&nbsp;</span><span class="syntax--meta syntax--item-access syntax--python"><span>grid</span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--python"><span>[</span></span><span class="syntax--meta syntax--item-access syntax--arguments syntax--python"><span>decayed_to_zero</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--python"><span>]</span></span></span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>0</span></span><span>&nbsp;</span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span>&nbsp;switch&nbsp;their&nbsp;state&nbsp;to&nbsp;0</span><span>&nbsp;</span></span></span></div><div class="line"><span class="syntax--source syntax--python"><span>&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--statement syntax--python"><span>return</span></span><span>&nbsp;</span><span>grid</span></span></div><div class="line"><span class="syntax--source syntax--python"><span>...</span></span></div><div class="line"><span class="syntax--source syntax--python"><span class="syntax--meta syntax--function syntax--python"><span class="syntax--storage syntax--type syntax--function syntax--python"><span>def</span></span><span>&nbsp;</span><span class="syntax--entity syntax--name syntax--function syntax--python"><span>main</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--python"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--python"><span>)</span></span><span class="syntax--punctuation syntax--section syntax--function syntax--begin syntax--python"><span>:</span></span></span></span></div><div class="line"><span class="syntax--source syntax--python"><span>&nbsp;&nbsp;...</span></span></div><div class="line"><span class="syntax--source syntax--python"><span>&nbsp;&nbsp;</span><span>decaygrid</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span>&nbsp;</span><span class="syntax--meta syntax--function-call syntax--python"><span>np</span><span>.</span><span>zeros</span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--python"><span>(</span></span><span class="syntax--meta syntax--function-call syntax--arguments syntax--python"><span>config</span><span>.</span><span>grid_dims</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--python"><span>)</span></span></span></span></div><div class="line"><span class="syntax--source syntax--python"><span>&nbsp;&nbsp;</span><span class="syntax--meta syntax--function-call syntax--python"><span>decaygrid</span><span>.</span><span>fill</span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--python"><span>(</span></span><span class="syntax--meta syntax--function-call syntax--arguments syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>2</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--python"><span>)</span></span></span></span></div><div class="line"><span class="syntax--source syntax--python"><span>&nbsp;&nbsp;</span><span>grid</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span>&nbsp;</span><span class="syntax--meta syntax--function-call syntax--python"><span>Grid2D</span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--python"><span>(</span></span><span class="syntax--meta syntax--function-call syntax--arguments syntax--python"><span>config</span><span>,&nbsp;</span><span>(</span><span>transition_function</span><span>,&nbsp;</span><span>decaygrid</span><span>)</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--python"><span>)</span></span></span></span></div><div class="line"><span class="syntax--source syntax--python"><span class="syntax--punctuation syntax--whitespace syntax--comment syntax--leading syntax--python"><span>&nbsp;&nbsp;</span></span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span>&nbsp;the&nbsp;usual&nbsp;constructor&nbsp;would&nbsp;be&nbsp;Grid2D(config,&nbsp;transition_function)</span><span>&nbsp;</span></span></span></div><div class="line"><span class="syntax--source syntax--python"><span>&nbsp;&nbsp;</span><span>timeline</span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span>&nbsp;</span><span class="syntax--meta syntax--function-call syntax--python"><span>grid</span><span>.</span><span>run</span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--python"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--python"><span>)</span></span></span></span></div><div class="line"><span class="syntax--source syntax--python"><span>&nbsp;&nbsp;...</span></span></div><div class="line"><span class="syntax--source syntax--python"><span>...</span></span></div></pre>
 <h2 id="creating-a-new-ca-description">Creating a new CA description</h2>
 <p>Using the menu bar, File -&gt; New will open a new window that the user must fill in (title, dimensions and states (optional)). This will create an auto-generated template description file in the ca_descriptions folder. All the user needs to do is ensure that the title, dimensions and states are saved into the config object, and write the transition function as described above.</p></body>
 </html>

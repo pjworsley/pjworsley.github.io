@@ -1,0 +1,10 @@
+title : CAPyLE
+tagline: CA teaching tool
+author :
+  name : Peter Worsley
+    github : pjworsley
+
+
+prodcution_url: http://pjworsley.github.io/
+
+markdown: kramdown

@@ -506,17 +506,17 @@ CiCS desktops can be extremely temperamental when it comes to unzipping files, a
 <ol>
 <li>Install git from the software centre if not already installed</li>
 <li>Open git bash from the start menu</li>
-<li>Execute <code style="font-family: Menlo;">git clone https://github.com/pjworsley/capyle [destination-folder]</code> where the destination folder is in your U: drive</li>
+<li>Execute <code style="font-family: Courier New;">git clone https://github.com/pjworsley/capyle [destination-folder]</code> where the destination folder is in your U: drive</li>
 </ol>
 </li>
 </ol>
 <h3 id="running-capyle">Running CAPyLE</h3>
 <ol>
 <li>Open command prompt for Anaconda from the start menu</li>
-<li>Navigate to where you unzipped/cloned CAPyLE (on windows machines use the <code style="font-family: Menlo;">U:</code> command to switch to the U drive then continue to use <code style="font-family: Menlo;">cd</code> as normal)</li>
+<li>Navigate to where you unzipped/cloned CAPyLE (on windows machines use the <code style="font-family: Courier New;">U:</code> command to switch to the U drive then continue to use <code style="font-family: Courier New;">cd</code> as normal)</li>
 <li>Execute CAPyLE by either:<ol>
-<li><code style="font-family: Menlo;">python main.py</code></li>
-<li><code style="font-family: Menlo;">run.bat</code> or <code style="font-family: Menlo;">run.sh</code> (Windows or Unix respectively)</li>
+<li><code style="font-family: Courier New;">python main.py</code></li>
+<li><code style="font-family: Courier New;">run.bat</code> or <code style="font-family: Courier New;">run.sh</code> (Windows or Unix respectively)</li>
 </ol>
 </li>
 </ol>
@@ -532,7 +532,7 @@ CiCS desktops can be extremely temperamental when it comes to unzipping files, a
 <li><p>If you would prefer to not install anaconda and instead configure your own Python installation:</p>
 <ul>
 <li>Download <a href="http://www.python.com/downloads">Python 3 from here</a> <em>or</em> if you are using a Unix-like system then you may prefer to use a package manager (homebrew for macOS and apt/yum/dnf/pacman/... for Linux), making sure to install Python 3.4 or above.</li>
-<li>Install the required libraries using <code style="font-family: Menlo;">pip install [package-name]</code>:<ul>
+<li>Install the required libraries using <code style="font-family: Courier New;">pip install [package-name]</code>:<ul>
 <li>numpy</li>
 <li>matplotlib</li>
 <li>pickle</li>
@@ -550,7 +550,7 @@ The zip file may be downloaded from <a href="http://vle.shef.ac.uk">MOLE</a> (or
 <li><p>Cloning from <a href="https://github.com/pjworsley/capyle">github</a></p>
 <ol>
 <li>Install git if not already installed</li>
-<li>Execute <code style="font-family: Menlo;">git clone https://github.com/pjworsley/capyle [destination-folder]</code></li>
+<li>Execute <code style="font-family: Courier New;">git clone https://github.com/pjworsley/capyle [destination-folder]</code></li>
 </ol>
 </li>
 </ol>
@@ -558,8 +558,8 @@ The zip file may be downloaded from <a href="http://vle.shef.ac.uk">MOLE</a> (or
 <ol>
 <li>Open your preferred terminal and navigate to the directory where you unzipped/cloned CAPyLE</li>
 <li>Execute CAPyLE by either:<ol>
-<li><code style="font-family: Menlo;">python main.py</code></li>
-<li><code style="font-family: Menlo;">run.bat</code> or <code style="font-family: Menlo;">run.sh</code> (Windows or Unix respectively)`</li>
+<li><code style="font-family: Courier New;">python main.py</code></li>
+<li><code style="font-family: Courier New;">run.bat</code> or <code style="font-family: Courier New;">run.sh</code> (Windows or Unix respectively)`</li>
 </ol>
 </li>
 </ol>
@@ -573,8 +573,8 @@ The zip file may be downloaded from <a href="http://vle.shef.ac.uk">MOLE</a> (or
 </li>
 <li>Python 3.5.1 :: Anaconda 4.1.1<ul>
 <li>Some installations causes program to crash inexplicably</li>
-<li>Unfortunately there seem to be two versions of this software, to diagnose which version you have, run <code style="font-family: Menlo;">pip list</code> from the command prompt with Anaconda.</li>
-<li>If the output is a list of modules go to fix A, otherwise, if the (bottom of) output is <code style="font-family: Menlo;">...AttributeError: &#39;_NamespacePath&#39; object has no attribute &#39;sort&#39;</code> go to fix B</li>
+<li>Unfortunately there seem to be two versions of this software, to diagnose which version you have, run <code style="font-family: Courier New;">pip list</code> from the command prompt with Anaconda.</li>
+<li>If the output is a list of modules go to fix A, otherwise, if the (bottom of) output is <code style="font-family: Courier New;">...AttributeError: &#39;_NamespacePath&#39; object has no attribute &#39;sort&#39;</code> go to fix B</li>
 </ul>
 </li>
 </ul>
@@ -588,9 +588,9 @@ The zip file may be downloaded from <a href="http://vle.shef.ac.uk">MOLE</a> (or
 <ul>
 <li>This should be a working installation, try the below:</li>
 <li>Re-install from the software center - the broken installation will not be able to import modules correctly. To test if this is the case start an interactive prompt with
-<code style="font-family: Menlo;">$ ipython</code>
+<code style="font-family: Courier New;">$ ipython</code>
 Then execute the command
-<code style="font-family: Menlo;">import numpy as np</code>
+<code style="font-family: Courier New;">import numpy as np</code>
 , which in a working installation will take about 1s, in a broken installation this will take much longer.</li>
 <li>The conda package manager and pip package manager are not working in this installation, but you should not need to use them.</li>
 </ul>

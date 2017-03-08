@@ -490,28 +490,12 @@ pre.editor-colors .fold-marker:after {
 <ul>
 <li><a href="#university-of-sheffield-desktops">University of Sheffield Desktops</a></li>
 <li><a href="#installing-capyle-on-your-own-computer">A personal computer</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
 </ul>
 <h2 id="university-of-sheffield-desktops">University of Sheffield Desktops</h2>
 <h3 id="software-requirements">Software requirements</h3>
 <p>Make sure you have Anaconda x.y.z - Python 3.x installed on your computer, and even if you do, it might be best to install the latest version available from the software centre. Check your version of Python &amp; anaconda with:</p>
-<pre class="editor-colors lang-text"><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>$&nbsp;python&nbsp;--version</span></span></span></div></pre><p>Potentially troublesome versions:</p>
-<ul>
-<li>Python 3.4.3 :: Anaconda 2.2.0<ul>
-<li>In this version some modules are compiled in the wrong order, and CAPyLE cannot run. To fix this run:<pre class="editor-colors lang-text"><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>$&nbsp;pip&nbsp;install&nbsp;--upgrade&nbsp;pip&nbsp;&amp;&amp;&nbsp;pip&nbsp;install&nbsp;--upgrade&nbsp;matplotlib</span></span></span></div></pre></li>
-</ul>
-</li>
-<li>Python 3.5.1 :: Anaconda 4.1.1<ul>
-<li>All modules compiled correctly and so CAPyLE should be runnable.</li>
-<li>Sometimes requires a re-install from the software center - the broken installation will not be able to import modules correctly. To test if this is the case start an interactive prompt with
-<code style="font-family: Menlo;">$ ipython</code>
-Then execute the command
-<code style="font-family: Menlo;">import numpy as np</code>
-, which in a working installation will take about 0.5s, in a broken installation this will take much longer.</li>
-<li>The conda package manager and pip package manager are not working in this installation, but you should not need to use them in this installation.</li>
-</ul>
-</li>
-</ul>
-<h3 id="downloading-capyle">Downloading CAPyLE</h3>
+<pre class="editor-colors lang-text"><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>$&nbsp;python&nbsp;--version</span></span></span></div></pre><h3 id="downloading-capyle">Downloading CAPyLE</h3>
 <p>CAPyLE may be downloaded in two ways:</p>
 <ol>
 <li><p>Downloading .zip
@@ -575,8 +559,44 @@ The zip file may be downloaded from <a href="http://vle.shef.ac.uk">MOLE</a> (or
 <li>Open your preferred terminal and navigate to the directory where you unzipped/cloned CAPyLE</li>
 <li>Execute CAPyLE by either:<ol>
 <li><code style="font-family: Menlo;">python main.py</code></li>
-<li><code style="font-family: Menlo;">run.bat</code> or <code style="font-family: Menlo;">run.sh</code> (Windows or Unix respectively)</li>
+<li><code style="font-family: Menlo;">run.bat</code> or <code style="font-family: Menlo;">run.sh</code> (Windows or Unix respectively)`</li>
 </ol>
 </li>
-</ol></body>
+</ol>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="uos-desktops">UoS Desktops</h3>
+<p>Potentially troublesome python versions:</p>
+<ul>
+<li>Python 3.4.3 :: Anaconda 2.2.0<ul>
+<li>In this version some modules are compiled in the wrong order, and CAPyLE cannot run. To fix this run:<pre class="editor-colors lang-text"><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>$&nbsp;pip&nbsp;install&nbsp;--upgrade&nbsp;pip&nbsp;&amp;&amp;&nbsp;pip&nbsp;install&nbsp;--upgrade&nbsp;matplotlib</span></span></span></div></pre></li>
+</ul>
+</li>
+<li>Python 3.5.1 :: Anaconda 4.1.1<ul>
+<li>Some installations causes program to crash inexplicably</li>
+<li>Unfortunately there seem to be two versions of this software, to diagnose which version you have, run <code style="font-family: Menlo;">pip list</code> from the command prompt with Anaconda.</li>
+<li>If the output is a list of modules go to fix A, otherwise, if the (bottom of) output is <code style="font-family: Menlo;">...AttributeError: &#39;_NamespacePath&#39; object has no attribute &#39;sort&#39;</code> go to fix B</li>
+</ul>
+</li>
+</ul>
+<h4 id="fix-a">Fix A</h4>
+<ul>
+<li>There appears to be an issue with the compilation of modules we can simply reinstall these (as for some reason the pip package manager is allowed to run in this version but not the other)</li>
+<li>Open command prompt for anaconda and execute<pre class="editor-colors lang-text"><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>$&nbsp;pip&nbsp;install&nbsp;--upgrade&nbsp;pip&nbsp;&amp;&amp;&nbsp;pip&nbsp;install&nbsp;--upgrade&nbsp;matplotlib</span></span></span></div></pre></li>
+<li>This updates the package manager, and then uses it to install matplotlib and its dependencies</li>
+</ul>
+<h4 id="fix-b">Fix B</h4>
+<ul>
+<li>This should be a working installation, try the below:</li>
+<li>Re-install from the software center - the broken installation will not be able to import modules correctly. To test if this is the case start an interactive prompt with
+<code style="font-family: Menlo;">$ ipython</code>
+Then execute the command
+<code style="font-family: Menlo;">import numpy as np</code>
+, which in a working installation will take about 1s, in a broken installation this will take much longer.</li>
+<li>The conda package manager and pip package manager are not working in this installation, but you should not need to use them.</li>
+</ul>
+<h3 id="your-own-computer">Your own computer</h3>
+<ul>
+<li>Try turning it off and on again</li>
+<li>Update anaconda/python</li>
+</ul></body>
 </html>

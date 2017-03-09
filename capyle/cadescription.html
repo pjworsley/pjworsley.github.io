@@ -275,7 +275,7 @@ config.state_colors <span class="pl-k">=</span> [(<span class="pl-c1">0</span>,<
 
 <div class="highlight highlight-source-python"><pre>cells_in_state_1 <span class="pl-k">=</span> (grid <span class="pl-k">==</span> <span class="pl-c1">1</span>) <span class="pl-c"><span class="pl-c">#</span> cells that are currently in state 1</span>
 three_zero_neighbours <span class="pl-k">=</span> (neighbourcounts[<span class="pl-c1">0</span>] <span class="pl-k">==</span> <span class="pl-c1">3</span>) <span class="pl-c"><span class="pl-c">#</span> cells that have 3 neighbours in state 0</span>
-to_zero <span class="pl-k">=</span> cells_in_state_1 <span class="pl-ii">&amp;&amp;</span> three_zero_neighbours
+to_zero <span class="pl-k">=</span> cells_in_state_1 <span class="pl-k">&amp;</span> three_zero_neighbours
 <span class="pl-c"><span class="pl-c">#</span> cells that are currently in state 1 and have exactly three neighbours in state 0</span>
 <span class="pl-c"><span class="pl-c">#</span> are set to zero</span>
 grid[to_zero] <span class="pl-k">=</span> <span class="pl-c1">0</span></pre></div>
@@ -295,8 +295,8 @@ To create a rule where if the cell is in state 3 and the corner neighbours are a
 <div class="highlight highlight-source-python"><pre><span class="pl-c"><span class="pl-c">#</span> unpack the state arrays</span>
 <span class="pl-c1">NW</span>, N, <span class="pl-c1">NE</span>, W, E, <span class="pl-c1">SW</span>, S, <span class="pl-c1">SE</span> <span class="pl-k">=</span> neighbourstates
 in_state_3 <span class="pl-k">=</span> (grid <span class="pl-k">==</span> <span class="pl-c1">3</span>) <span class="pl-c"><span class="pl-c">#</span> cells currently in state 3</span>
-all_corners_above_1 <span class="pl-k">=</span> (<span class="pl-c1">NW</span> <span class="pl-k">&gt;</span> <span class="pl-c1">1</span>) <span class="pl-ii">&amp;&amp;</span> (<span class="pl-c1">NE</span> <span class="pl-k">&gt;</span> <span class="pl-c1">1</span>) <span class="pl-ii">&amp;&amp;</span> (<span class="pl-c1">SW</span> <span class="pl-k">&gt;</span> <span class="pl-c1">1</span>) <span class="pl-ii">&amp;&amp;</span> (<span class="pl-c1">SE</span> <span class="pl-k">&gt;</span> <span class="pl-c1">1</span>) <span class="pl-c"><span class="pl-c">#</span> corner states &gt; 1</span>
-to_one <span class="pl-k">=</span> in_state_3 <span class="pl-ii">&amp;&amp;</span> all_corners_above_1 <span class="pl-c"><span class="pl-c">#</span> union the results</span>
+all_corners_above_1 <span class="pl-k">=</span> (<span class="pl-c1">NW</span> <span class="pl-k">&gt;</span> <span class="pl-c1">1</span>) <span class="pl-k">&amp;</span> (<span class="pl-c1">NE</span> <span class="pl-k">&gt;</span> <span class="pl-c1">1</span>) <span class="pl-k">&amp;</span> (<span class="pl-c1">SW</span> <span class="pl-k">&gt;</span> <span class="pl-c1">1</span>) <span class="pl-k">&amp;</span> (<span class="pl-c1">SE</span> <span class="pl-k">&gt;</span> <span class="pl-c1">1</span>) <span class="pl-c"><span class="pl-c">#</span> corner states &gt; 1</span>
+to_one <span class="pl-k">=</span> in_state_3 <span class="pl-k">&amp;</span> all_corners_above_1 <span class="pl-c"><span class="pl-c">#</span> union the results</span>
 grid[to_one] <span class="pl-k">=</span> <span class="pl-c1">1</span></pre></div>
 
 <p>Of course you are not limited to using either, feel free to mix and match if it is required.</p>

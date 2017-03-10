@@ -64,7 +64,13 @@
 <a id="user-content-contents" class="anchor" href="#contents" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contents:</h2>
 
 <ul>
-<li><a href="#the-caconfig-class">The CAConfig class</a></li>
+<li>
+<a href="#the-caconfig-class">The CAConfig class</a>
+
+<ul>
+<li><a href="#overriding-the-gui">Overriding the GUI</a></li>
+</ul>
+</li>
 <li><a href="#ca-descriptions-location">Location and format</a></li>
 <li>
 <a href="#required-in-a-ca-description-file">Description file requirements</a>
@@ -154,6 +160,12 @@
 <td>The rule number for wolframs 1D CA</td>
 <td><code>30</code></td>
 </tr>
+<tr>
+<td>wrap</td>
+<td>bool/float/int</td>
+<td>The wrapping setting for whether you wish to wrap the grid around, pac-man style. Setting this value to True =&gt; wrapping behaviour, False =&gt; surrounded by 'dead' state -100, int/float =&gt; surrounded by this value. You may supply your own value if you need to handle interactions with state -100 in your model, otherwise just set the boolean value. This defaults to True.</td>
+<td><code>False</code></td>
+</tr>
 </tbody>
 </table>
 
@@ -180,6 +192,13 @@
 </tr>
 </tbody>
 </table>
+
+<h3>
+<a id="user-content-overriding-the-gui" class="anchor" href="#overriding-the-gui" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overriding the GUI</h3>
+
+<p>The GUI passes a CAConfig object to your CA description, filled with the values from the GUI. You can plug this directly into a GridXD object, or alternatively you can override the variables in the CAObject before passing it to the GridXD object to completely ignore the GUI. Setting these values will also mean that you can 'save' configurations (for example setting the values in the initial_grid so that they persist).</p>
+
+<p>It is reccomended that you set these defaults in the <code>setup</code> function, as then when the CA description is initially loaded, your defaults will be shown in the GUI. You may also set them in <code>main</code> if you prefer, just as long as they are set before the GridXD constructor.</p>
 
 <p>For more detail, see the <a href="http://pjworsley.github.io/capyle/docs/">API documentation</a>.</p>
 

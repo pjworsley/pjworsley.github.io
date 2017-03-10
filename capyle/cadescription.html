@@ -196,7 +196,7 @@
 <h3>
 <a id="user-content-overriding-the-gui" class="anchor" href="#overriding-the-gui" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overriding the GUI</h3>
 
-<p>The GUI passes a CAConfig object to your CA description, filled with the values from the GUI. You can plug this directly into a GridXD object, or alternatively you can override the variables in the CAObject before passing it to the GridXD object to completely ignore the GUI. Setting these values will also mean that you can 'save' configurations (for example setting the values in the initial_grid so that they persist).</p>
+<p>The GUI passes a CAConfig object to your CA description, filled with the values from the GUI. You can plug this directly into a Grid__X__D object, or alternatively you can override the variables in the CAObject before passing it to the GridXD object to completely ignore the GUI. Setting these values will also mean that you can 'save' configurations (for example setting the values in the initial_grid so that they persist).</p>
 
 <p>It is reccomended that you set these defaults in the <code>setup</code> function, as then when the CA description is initially loaded, your defaults will be shown in the GUI. You may also set them in <code>main</code> if you prefer, just as long as they are set before the GridXD constructor.</p>
 

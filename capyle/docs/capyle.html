@@ -182,7 +182,7 @@ sys.path[0] can be used to get the directory of main.py and then
 <dt id="capyle.display.Display.run_ca">
 <code class="descname">run_ca</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#capyle.display.Display.run_ca" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run the loaded CA passing in the config from GUI</p>
-<p>Running the CA with utils.run_ca returns the new CAConfig object
+<p>Running the CA with run_ca returns the new CAConfig object
 and the Timeline. Timeline loaded by calling self.load_timeline
 .. note:: The config may overwritten in the CA description</p>
 </dd></dl>
@@ -264,6 +264,11 @@ anywhere and simply have to have a guess.</p>
 </tbody>
 </table>
 </dd></dl>
+
+<dl class="function">
+<dt id="capyle.utils.get_logo">
+<code class="descclassname">capyle.utils.</code><code class="descname">get_logo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#capyle.utils.get_logo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="capyle.utils.get_metadata">
@@ -412,7 +417,7 @@ and passed to the CA file.</td>
 
 <dl class="function">
 <dt id="capyle.utils.screenshot">
-<code class="descclassname">capyle.utils.</code><code class="descname">screenshot</code><span class="sig-paren">(</span><em>cagraph</em>, <em>catitle</em><span class="sig-paren">)</span><a class="headerlink" href="#capyle.utils.screenshot" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">capyle.utils.</code><code class="descname">screenshot</code><span class="sig-paren">(</span><em>cagraph</em>, <em>catitle</em>, <em>path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#capyle.utils.screenshot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Take a screenshot of the supplied CAGraph and save to disk</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />

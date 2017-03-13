@@ -80,13 +80,13 @@ they are filled in with defaults here</p>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="capyle.ca.caconfig.CAConfig.set_initial_grid">
-<code class="descname">set_initial_grid</code><span class="sig-paren">(</span><em>grid</em><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.caconfig.CAConfig.set_initial_grid" title="Permalink to this definition">¶</a></dt>
+<dt id="capyle.ca.caconfig.CAConfig.set_grid_dims">
+<code class="descname">set_grid_dims</code><span class="sig-paren">(</span><em>dims=None</em>, <em>num_generations=None</em><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.caconfig.CAConfig.set_grid_dims" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="capyle.ca.caconfig.CAConfig.setgriddims">
-<code class="descname">setgriddims</code><span class="sig-paren">(</span><em>dims=None</em>, <em>num_generations=None</em><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.caconfig.CAConfig.setgriddims" title="Permalink to this definition">¶</a></dt>
+<dt id="capyle.ca.caconfig.CAConfig.set_initial_grid">
+<code class="descname">set_initial_grid</code><span class="sig-paren">(</span><em>grid</em><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.caconfig.CAConfig.set_initial_grid" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -169,18 +169,22 @@ neighbourhood array stored</td>
 <span id="capyle-ca-grid1d-module"></span><h2>capyle.ca.grid1d module<a class="headerlink" href="#module-capyle.ca.grid1d" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="capyle.ca.grid1d.Grid1D">
-<em class="property">class </em><code class="descclassname">capyle.ca.grid1d.</code><code class="descname">Grid1D</code><span class="sig-paren">(</span><em>ca_config</em>, <em>transition_func</em>, <em>wrapping=False</em><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.grid1d.Grid1D" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">capyle.ca.grid1d.</code><code class="descname">Grid1D</code><span class="sig-paren">(</span><em>ca_config</em>, <em>transition_func</em><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.grid1d.Grid1D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">grid.Grid</span></code></p>
 <dl class="method">
 <dt id="capyle.ca.grid1d.Grid1D.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>ca_config</em>, <em>transition_func</em>, <em>wrapping=False</em><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.grid1d.Grid1D.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>ca_config</em>, <em>transition_func</em><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.grid1d.Grid1D.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>1D grid constructor - takes the generations, states and
 transition function to create the appropriate grid.</p>
 <blockquote>
 <div>If no neighbourhood specified [1,1,1] will be used
-Default grid configuration; center cell in state[-1]
-Wrapping behaviour may be introduced by wrapping flag to True</div></blockquote>
+Default grid configuration; center cell in state[-1]</div></blockquote>
 </dd></dl>
+
+<dl class="method">
+<dt id="capyle.ca.grid1d.Grid1D.count_neighbours">
+<code class="descname">count_neighbours</code><span class="sig-paren">(</span><em>neighbourstates</em><span class="sig-paren">)</span><a class="headerlink" href="#capyle.ca.grid1d.Grid1D.count_neighbours" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="capyle.ca.grid1d.Grid1D.get_neighbour_arrays">

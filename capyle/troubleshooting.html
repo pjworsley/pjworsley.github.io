@@ -80,14 +80,29 @@
 <p>Set the values in your CA description file before the Grid object is created (for example in <code>setup</code>). For example:</p>
 
 <ul>
-<li>To always use 200 by 200 grid: <code>config.grid_dims = 200, 200</code>
-</li>
-<li>To set default state colours for my three states:
-<code>config.state_colors = [(0.5, 0, 0.5), (0, 0.5, 0.63), (1, 0, 0)]</code>
-</li>
-<li>To set an initial grid (this example fills with state 0 then fills a square with state 1):
-<code>config.initial_grid = np.zeros(config.grid_dims); config.initial_grid[30:35, 30:35] = 1</code>
-</li>
+<li>To always use 200 by 200 grid:</li>
+</ul>
+
+<pre><code>config.grid_dims = 200, 200
+</code></pre>
+
+<ul>
+<li>To set default state colours for my three states:</li>
+</ul>
+
+<pre><code>config.state_colors = [(0.5, 0, 0.5), (0, 0.5, 0.63), (1, 0, 0)]
+</code></pre>
+
+<ul>
+<li>To set an initial grid (this example fills with state 0 then fills central 5x5 square with state 1):</li>
+</ul>
+
+<pre><code>config.initial_grid = np.zeros(config.grid_dims)
+halfr, halfc = config.grid_dims[0]//2, config.grid_dims[1]//2
+config.initial_grid[halfr:halfr+5, halfc:halfc+5] = 1
+</code></pre>
+
+<ul>
 <li>etc...</li>
 </ul>
 

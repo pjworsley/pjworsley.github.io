@@ -55,34 +55,26 @@
               <article class="markdown-body entry-content" itemprop="text" id="grip-content">
                 <h1>
 <a id="user-content-capyle-guide" class="anchor" href="#capyle-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CAPyLE Guide</h1>
-
 <p><a href="http://pjworsley.github.io/capyle">Home</a></p>
-
 <h2>
 <a id="user-content-introduction" class="anchor" href="#introduction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introduction</h2>
-
-<p>CAPyLE is composed of two main parts:
-1. The cellular automata framework
-2. The GUI used to experiment with the CA</p>
-
+<p>CAPyLE is composed of two main parts:</p>
+<ol>
+<li>The cellular automata framework</li>
+<li>The GUI used to experiment with the CA</li>
+</ol>
 <p>The cellular automata (CA) framework compromises of a number of Classes, when paired with a CA description will run a CA and output its grid state for each timestep to a file. This framework's usefulness is reliant on the speed of execution and hence is heavily biased towards performance over readability; numpy arrays are used throughout and unless you have a good understanding of numpy array operations, it may be a little confusing as to what is going on at first. These steps to increase performance were necessary as in a compiled language like C or Java, you may be able to get away with:</p>
-
 <pre><code>for (row in grid){
   for (col in row){
     do x;
   }
 }
 </code></pre>
-
 <p>Whereas in Python, an interpreted language, such operations do not scale well, and we must look for alternatives; in this case numpy arrays.</p>
-
 <p>The GUI component is designed to be used only with the CA implementation above and allows the user to interact with the CA's execution conditions and allows the user to experiment and observe. The GUI framework used is Tkinter (python's inbuilt GUI framework) and although other frameworks are more advanced and look better, the target computer systems did not allow the installation of extra librairies and such Tkinter was used inconjucntion with matplotlip for plotting graphs (CA output).</p>
-
 <h2>
 <a id="user-content-module-layout" class="anchor" href="#module-layout" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Module layout</h2>
-
 <p>A Python module is a collection of code that a user may import and use the classes and definitions much like using an API. This project has one main module 'capyle' which houses some classes and two submodules which also contain class definitions. Below is the module structure of capyle.</p>
-
 <pre><code>capyle
 | Display
 | _PlaybackControls
@@ -113,11 +105,8 @@
     | _Separator
     | _StateColorsUI
 </code></pre>
-
 <p><em>The underscore leading a class name indicates an internal (The non enforced version of Java's private') class</em></p>
-
 <p>The important items to the user are <code>Display</code>, the contents of <code>capyle.ca</code> and <code>utils</code>. <code>Display</code> is the class that simply has to be initialised to create the main GUI ready to accept and run a CA description. The non-internal classes of <code>capyle.ca</code> contains the classes used when creating one of these descriptions, for example a <code>Grid1D</code> object requires an instance of <code>Neighbourhood</code> as one of its parameters.</p>
-
 <h2>
 <a id="user-content-capyle-folder-layout" class="anchor" href="#capyle-folder-layout" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CAPyLE Folder Layout</h2>
 

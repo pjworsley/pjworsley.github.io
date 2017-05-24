@@ -55,12 +55,9 @@
               <article class="markdown-body entry-content" itemprop="text" id="grip-content">
                 <h1>
 <a id="user-content-troubleshooting-guide" class="anchor" href="#troubleshooting-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Troubleshooting guide</h1>
-
 <h3>
 <a id="user-content-my-ca-is-really-slow" class="anchor" href="#my-ca-is-really-slow" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>My CA is really slow</h3>
-
 <p>Every step has in the internal system has been taken to ensure that it runs things as fast as possible. If your CA is very slow, then the cause will be your transition function. Refer to the <a href="https://pjworlsey.github.io/capyle/cadescription.html">CA description guide</a> for specifics, but you must try to create your transition rules using Numpy array operations, as these operations are compiled C and run in parallel if possible, resulting in them being exceptionally fast.</p>
-
 <ul>
 <li>Some for loops are acceptable as there may be occasions when it is computationally quicker (or equal) to perform a low step count for loop than prepare an array for a numpy operation.</li>
 <li>The above holds for nested for loops, but these must be used with extreme care</li>
@@ -68,86 +65,56 @@
 <em>Never</em> traverse the grid using a for row in grid, for cell in row like operation. There will be alternative, but perhaps less obvious solutions.</li>
 <li>If possible put any intensive or repetitive processing in the <code>main</code> function, and pass the part or full pre-processed information to the transition function. Even if it is a very simple operation, remember that your transition function will be called every iteration and will have an impact.</li>
 </ul>
-
 <p>If you have taken the steps above, try reducing your grid dimensions or generations to speed up the simulation.</p>
-
 <h3>
 <a id="user-content-my-gui-parameters-are-not-doing-anything" class="anchor" href="#my-gui-parameters-are-not-doing-anything" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>My GUI parameters are not doing anything</h3>
-
 <p>Check the CA description you are trying to run, the parameter will be being overwritten in there (more than likely in the <code>setup</code> function.</p>
-
 <h3>
 <a id="user-content-how-do-i-save-my-configuration" class="anchor" href="#how-do-i-save-my-configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How do I save my configuration?</h3>
-
 <p>Set the values in your CA description file before the Grid object is created (for example in <code>setup</code>). For example:</p>
-
 <ul>
 <li>To always use 200 by 200 grid:</li>
 </ul>
-
 <div class="highlight highlight-source-python"><pre>config.grid_dims <span class="pl-k">=</span> <span class="pl-c1">200</span>, <span class="pl-c1">200</span></pre></div>
-
 <ul>
 <li>To set default state colours for my three states:</li>
 </ul>
-
 <div class="highlight highlight-source-python"><pre><span class="pl-c1">...</span>
 config.states <span class="pl-k">=</span> (<span class="pl-c1">0</span>,<span class="pl-c1">1</span>,<span class="pl-c1">2</span>)
 <span class="pl-c1">...</span>
 config.state_colors <span class="pl-k">=</span> [(<span class="pl-c1">0.5</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0.5</span>), (<span class="pl-c1">0</span>, <span class="pl-c1">0.5</span>, <span class="pl-c1">0.63</span>), (<span class="pl-c1">1</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0</span>)]</pre></div>
-
 <ul>
 <li>To set an initial grid (this example fills with state 0 then fills central 5x5 square with state 1):</li>
 </ul>
-
 <div class="highlight highlight-source-python"><pre>config.initial_grid <span class="pl-k">=</span> np.zeros(config.grid_dims)                <span class="pl-c"><span class="pl-c">#</span> zero grid</span>
 halfr, halfc <span class="pl-k">=</span> config.grid_dims[<span class="pl-c1">0</span>]<span class="pl-k">//</span><span class="pl-c1">2</span>, config.grid_dims[<span class="pl-c1">1</span>]<span class="pl-k">//</span><span class="pl-c1">2</span>   <span class="pl-c"><span class="pl-c">#</span> calc central square indices </span>
 config.initial_grid[halfr:halfr<span class="pl-k">+</span><span class="pl-c1">5</span>, halfc:halfc<span class="pl-k">+</span><span class="pl-c1">5</span>] <span class="pl-k">=</span> <span class="pl-c1">1</span>           <span class="pl-c"><span class="pl-c">#</span> fill square with state 1</span></pre></div>
-
 <ul>
 <li>etc...</li>
 </ul>
-
 <h3>
 <a id="user-content-the-state-colours-are-the-same" class="anchor" href="#the-state-colours-are-the-same" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The state colours are the same</h3>
-
 <p>You can set default colours for each state, see the example above. Alternatively you can set these in the GUI.</p>
-
 <h3>
 <a id="user-content-it-crashed" class="anchor" href="#it-crashed" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>It crashed</h3>
-
 <ul>
 <li>If using macOS, and you scrolled on the window, this will make it crash as the native scrolling intertia is not handled at all by the GUI toolkit tkinter. Unfortunatley there was nothing to be done to fix this, so just refrain from scrolling! (There is no reason to scroll in this software)</li>
 <li>Bugs in your code should not cause the main GUI to crash, but if it does crash, check your CA description thoroughly for what could have caused it to terminate. Otherwise please report what you were doing to cause the crash to a demonstrator.</li>
 </ul>
-
 <h3>
 <a id="user-content-i-dont-like-this-software-at-all" class="anchor" href="#i-dont-like-this-software-at-all" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>I don't like this software at all</h3>
-
 <p>Sorry about that, please report why to the feedback form <a href="https://goo.gl/H6SW2q">here (https://goo.gl/H6SW2q)</a>.</p>
-
 <h1>
 <a id="user-content-possible-faqs" class="anchor" href="#possible-faqs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Possible FAQs</h1>
-
 <h3>
 <a id="user-content-what-is-numpy" class="anchor" href="#what-is-numpy" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What is Numpy?</h3>
-
 <p>You should have used this library in COM2004 Data driven computing, if not, please familiarise your self using the Numpy documentation and simple examples.</p>
-
 <h3>
 <a id="user-content-can-i-add-feature-x-so-that-it-does-y" class="anchor" href="#can-i-add-feature-x-so-that-it-does-y" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Can I add feature x so that it does y?</h3>
-
 <p>Go right ahead, but at your own risk. Make sure to save your CA descriptions somewhere safe.
 If you have a really good feature, create a github pull request and we will look into adding it to the main tool.</p>
-
-<h3>
-<a id="user-content-can-i-provide-some-feedback" class="anchor" href="#can-i-provide-some-feedback" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Can I provide some feedback?</h3>
-
-<p>Please ( <a href="https://media.giphy.com/media/cyoN6pC6kek2A/giphy.gif">please</a> ) do! Any feedback is welcomed, positive, negative or neutral. Use <a href="https://goo.gl/H6SW2q">this link (https://goo.gl/H6SW2q)</a> to fill in the google form.</p>
-
 <h3>
 <a id="user-content-why-are-the-code-lines-so-short" class="anchor" href="#why-are-the-code-lines-so-short" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Why are the code lines so short?</h3>
-
 <p>The python programming standard PEP8 requires the line length to be 79 characters or less. It is recommended to follow this standard where possible.</p>
 
               </article>

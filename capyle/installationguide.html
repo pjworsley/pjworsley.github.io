@@ -55,89 +55,71 @@
               <article class="markdown-body entry-content" itemprop="text" id="grip-content">
                 <h1>
 <a id="user-content-capyle-installation-guide" class="anchor" href="#capyle-installation-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CAPyLE installation guide</h1>
-
 <p><a href="http://pjworsley.github.io/capyle">Home</a></p>
-
 <h2>
 <a id="user-content-contents" class="anchor" href="#contents" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contents</h2>
-
 <ul>
 <li><a href="#university-of-sheffield-desktops">University of Sheffield Desktops</a></li>
 <li><a href="#installing-capyle-on-your-own-computer">A personal computer</a></li>
 <li><a href="#troubleshooting">Troubleshooting</a></li>
 </ul>
-
 <h2>
 <a id="user-content-university-of-sheffield-desktops" class="anchor" href="#university-of-sheffield-desktops" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>University of Sheffield Desktops</h2>
-
 <h3>
 <a id="user-content-software-requirements" class="anchor" href="#software-requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Software requirements</h3>
-
 <p>Make sure you have Anaconda x.y.z - Python 3.x installed on your computer, and even if you do, it might be best to install the latest version available from the software centre. Check your version of Python &amp; anaconda with:</p>
-
 <pre><code>$ python --version
 </code></pre>
-
 <h3>
 <a id="user-content-downloading-capyle" class="anchor" href="#downloading-capyle" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Downloading CAPyLE</h3>
-
 <p>CAPyLE may be downloaded in two ways:</p>
-
 <ol>
-<li><p>Downloading .zip
-The zip file may be downloaded from <a href="http://vle.shef.ac.uk">MOLE</a> (or <a href="https://github.com/pjworsley/capyle">github</a>) and must be unzipped into you U: drive. (It is also recommended that you download the .zip into your U: drive)</p></li>
+<li>
+<p>Downloading .zip
+The zip file may be downloaded from <a href="http://vle.shef.ac.uk">MOLE</a> (or <a href="https://github.com/pjworsley/capyle">github</a>) and must be unzipped into you U: drive. (It is also recommended that you download the .zip into your U: drive)</p>
+</li>
 <li>
 <p>Cloning from <a href="https://github.com/pjworsley/capyle">github</a>
 CiCS desktops can be extremely temperamental when it comes to unzipping files, and if you are stuggling to unzip or wish to use git, follow the instructions below:</p>
-
-<ol>
-<li>Install git from the software centre if not already installed</li>
-<li>Open git bash from the start menu (or use command prompt that has git correctly configured)</li>
-<li>Execute <code>git clone https://github.com/pjworsley/capyle.git [destination-folder]</code> where the destination folder is in your U: drive</li>
-</ol>
+</li>
+<li>
+<p>Install git from the software centre if not already installed</p>
+</li>
+<li>
+<p>Open git bash from the start menu (or use command prompt that has git correctly configured)</p>
+</li>
+<li>
+<p>Execute <code>git clone https://github.com/pjworsley/capyle.git [destination-folder]</code> where the destination folder is in your U: drive</p>
 </li>
 </ol>
-
 <h3>
 <a id="user-content-running-capyle" class="anchor" href="#running-capyle" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Running CAPyLE</h3>
-
 <ol>
 <li>Open command prompt for Anaconda from the start menu</li>
 <li>Navigate to where you unzipped/cloned CAPyLE (on windows machines use the <code>U:</code> command to switch to the U drive then continue to use <code>cd</code> as normal)</li>
-<li>Execute CAPyLE by either:
-
-<ol>
+<li>Execute CAPyLE by either:</li>
 <li><code>python main.py</code></li>
 <li>
 <code>run.bat</code> or <code>run.sh</code> (Windows or Unix respectively)</li>
 </ol>
-</li>
-</ol>
-
 <hr>
-
 <hr>
-
 <h2>
 <a id="user-content-installing-capyle-on-your-own-computer" class="anchor" href="#installing-capyle-on-your-own-computer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installing CAPyLE on your own computer</h2>
-
 <p>It is extremely likely that the performance of this software will improve greatly if the software is installed on your own personal computer. This project has been designed to be cross platform, and has been tested on Windows/macOS/Linux. Below are the requirements and steps.</p>
-
 <h3>
 <a id="user-content-software-requirements-1" class="anchor" href="#software-requirements-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Software requirements</h3>
-
 <h4>
 <a id="user-content-python-34-or-above--the-required-packages" class="anchor" href="#python-34-or-above--the-required-packages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Python 3.4 or above &amp; the required packages</h4>
-
 <ul>
-<li><p>For minimal hassle it is reccomended to install the latest version of <a href="https://www.continuum.io/downloads">anaconda</a> for Python 3. This is a distribution of python with a large number of libraries installed, including those that are required for CAPyLE.</p></li>
+<li>
+<p>For minimal hassle it is reccomended to install the latest version of <a href="https://www.continuum.io/downloads">anaconda</a> for Python 3. This is a distribution of python with a large number of libraries installed, including those that are required for CAPyLE.</p>
+</li>
 <li>
 <p>If you would prefer to not install anaconda and instead configure your own Python installation:</p>
-
 <ul>
 <li>Download <a href="http://www.python.com/downloads">Python 3 from here</a> <em>or</em> if you are using a Unix-like system then you may prefer to use a package manager (homebrew for macOS and apt/yum/dnf/pacman/... for Linux), making sure to install Python 3.4 or above.</li>
 <li>Install the required libraries using <code>pip install [package-name]</code>:
-
 <ul>
 <li>numpy</li>
 <li>matplotlib</li>
@@ -147,65 +129,49 @@ CiCS desktops can be extremely temperamental when it comes to unzipping files, a
 </ul>
 </li>
 </ul>
-
 <h3>
 <a id="user-content-downloading-capyle-1" class="anchor" href="#downloading-capyle-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Downloading CAPyLE</h3>
-
 <p>CAPyLE may be downloaded in two ways:</p>
-
 <ol>
-<li><p>Downloading .zip
-The zip file may be downloaded from <a href="http://vle.shef.ac.uk">MOLE</a> (or <a href="https://github.com/pjworsley/capyle">github</a>) and unzipped into a directory of your choice</p></li>
+<li>
+<p>Downloading .zip
+The zip file may be downloaded from <a href="http://vle.shef.ac.uk">MOLE</a> (or <a href="https://github.com/pjworsley/capyle">github</a>) and unzipped into a directory of your choice</p>
+</li>
 <li>
 <p>Cloning from <a href="https://github.com/pjworsley/capyle">github</a></p>
-
-<ol>
-<li>Install git if not already installed</li>
-<li>Execute <code>git clone https://github.com/pjworsley/capyle.git [destination-folder]</code>
+</li>
+<li>
+<p>Install git if not already installed</p>
+</li>
+<li>
+<p>Execute <code>git clone https://github.com/pjworsley/capyle.git [destination-folder]</code></p>
 </li>
 </ol>
-</li>
-</ol>
-
 <h3>
 <a id="user-content-running-capyle-1" class="anchor" href="#running-capyle-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Running CAPyLE:</h3>
-
 <ol>
 <li>Open your preferred terminal and navigate to the directory where you unzipped/cloned CAPyLE</li>
-<li>Execute CAPyLE by either:
-
-<ol>
+<li>Execute CAPyLE by either:</li>
 <li><code>python main.py</code></li>
 <li>
 <code>run.bat</code> or <code>run.sh</code> (Windows or Unix respectively)</li>
 </ol>
-</li>
-</ol>
-
 <hr>
-
 <hr>
-
 <h2>
 <a id="user-content-troubleshooting" class="anchor" href="#troubleshooting" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Troubleshooting</h2>
-
 <h3>
 <a id="user-content-uos-desktops" class="anchor" href="#uos-desktops" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>UoS Desktops</h3>
-
 <p>Potentially troublesome python versions:</p>
-
 <ul>
 <li>Python 3.4.3 :: Anaconda 2.3.0
-
 <ul>
 <li>In this version some modules are compiled in the wrong order, and CAPyLE cannot run. To fix this run:</li>
 </ul>
-
 <pre><code>$ pip install --upgrade pip &amp;&amp; pip install --upgrade matplotlib
 </code></pre>
 </li>
 <li>Python 3.5.1 :: Anaconda 4.1.1
-
 <ul>
 <li>Some installations causes program to crash inexplicably</li>
 <li>Unfortunately there seem to be two versions of this software, to diagnose which version you have, run <code>pip list</code> from the command prompt with Anaconda.</li>
@@ -213,23 +179,18 @@ The zip file may be downloaded from <a href="http://vle.shef.ac.uk">MOLE</a> (or
 </ul>
 </li>
 </ul>
-
 <h4>
 <a id="user-content-fix-a" class="anchor" href="#fix-a" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Fix A</h4>
-
 <ul>
 <li>There appears to be an issue with the compilation of modules we can simply reinstall these (as for some reason the pip package manager is allowed to run in this version but not the other)</li>
 <li>Open command prompt for anaconda and execute
-<code>
-$ pip install --upgrade pip &amp;&amp; pip install --upgrade matplotlib
-</code>
+<pre><code>$ pip install --upgrade pip &amp;&amp; pip install --upgrade matplotlib
+</code></pre>
 </li>
 <li>This updates the package manager, and then uses it to install matplotlib and its dependencies</li>
 </ul>
-
 <h4>
 <a id="user-content-fix-b" class="anchor" href="#fix-b" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Fix B</h4>
-
 <ul>
 <li>This should be a working installation, try the below:</li>
 <li>Re-install from the software center - the broken installation will not be able to import modules correctly. To test if this is the case start an interactive prompt with
@@ -239,10 +200,8 @@ Then execute the command
 , which in a working installation will take about 1s, in a broken installation this will take much longer.</li>
 <li>The conda package manager and pip package manager are not working in this installation, but you should not need to use them.</li>
 </ul>
-
 <h3>
 <a id="user-content-your-own-computer" class="anchor" href="#your-own-computer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Your own computer</h3>
-
 <ul>
 <li>Try turning it off and on again</li>
 <li>Update anaconda/python</li>

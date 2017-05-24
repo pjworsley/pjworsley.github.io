@@ -55,18 +55,13 @@
               <article class="markdown-body entry-content" itemprop="text" id="grip-content">
                 <h1>
 <a id="user-content-ca-descriptions-guide" class="anchor" href="#ca-descriptions-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CA Descriptions Guide</h1>
-
 <p><a href="http://pjworsley.github.io/capyle">Home</a></p>
-
 <p><em>This guide assumes a working installation of CAPyLE</em></p>
-
 <h2>
 <a id="user-content-contents" class="anchor" href="#contents" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contents:</h2>
-
 <ul>
 <li>
 <a href="#the-caconfig-class">The CAConfig class</a>
-
 <ul>
 <li><a href="#overriding-the-gui">Overriding the GUI</a></li>
 </ul>
@@ -74,11 +69,9 @@
 <li><a href="#ca-descriptions-location">Location and format</a></li>
 <li>
 <a href="#required-in-a-ca-description-file">Description file requirements</a>
-
 <ul>
 <li>
 <a href="#functions">Required Functions</a>
-
 <ul>
 <li><a href="#setup">Setup</a></li>
 <li><a href="#transition-function">Transition function</a></li>
@@ -88,14 +81,10 @@
 </li>
 <li><a href="#creating-a-new-ca-description">Creating a new CA description</a></li>
 </ul>
-
 <h2>
 <a id="user-content-the-caconfig-class" class="anchor" href="#the-caconfig-class" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The CAConfig Class</h2>
-
 <p>This class is available in <code>capyle.ca</code> and is used to transport CA parameters round the internal system. A whole instance of the class can be serialised using pickle and it simplifies dealing with 5+ Grid constructor arguments. Below are the variables that you may need to understand, if you wish to override the GUI within your description.</p>
-
 <p>All functions and methods are accessed by using the . operator on an instance of CAConfig. Eg. <code>config.states = (0,1)</code></p>
-
 <table>
 <thead>
 <tr>
@@ -168,11 +157,8 @@
 </tr>
 </tbody>
 </table>
-
 <p>*<em>only applicable for 1D CA</em></p>
-
 <p>Instead of setting the variables directly, you may find it more useful to use the functions:</p>
-
 <table>
 <thead>
 <tr>
@@ -192,94 +178,66 @@
 </tr>
 </tbody>
 </table>
-
 <h3>
 <a id="user-content-overriding-the-gui" class="anchor" href="#overriding-the-gui" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overriding the GUI</h3>
-
 <p>The GUI passes a CAConfig object to your CA description, filled with the values from the GUI. You can plug this directly into a Grid<code>X</code>D object, or alternatively you can override the variables in the CAObject before passing it to the Grid<code>X</code>D object to completely ignore the GUI. Setting these values will also mean that you can 'save' configurations (for example setting the values in the initial_grid so that they persist).</p>
-
 <p>It is reccomended that you set these defaults in the <code>setup</code> function, as then when the CA description is initially loaded, your defaults will be shown in the GUI. You may also set them in <code>main</code> if you prefer, just as long as they are set before the GridXD constructor.</p>
-
 <p>For an example, see the <a href="#setup">setup function guide</a> below.
 For more detail, see the <a href="http://pjworsley.github.io/capyle/docs/">API documentation</a>.</p>
-
 <hr>
-
 <h2>
 <a id="user-content-ca-descriptions-location" class="anchor" href="#ca-descriptions-location" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CA descriptions location</h2>
-
 <p>The example descriptions are located in <code>[path_to_main_folder]/ca_descriptions/</code>.
 This is also where user defined descriptions should be created.
 These files are .py files that describe how a CA should be executed by the main software.</p>
-
 <hr>
-
 <h2>
 <a id="user-content-required-in-a-ca-description-file" class="anchor" href="#required-in-a-ca-description-file" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Required in a CA description file</h2>
-
 <p>At the head of the file, it is critical to define where the module 'capyle' and its submodules are (by editing sys.path). This is automatically inserted on creation of a new description.</p>
-
 <h3>
 <a id="user-content-functions" class="anchor" href="#functions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Functions</h3>
-
 <p>The main body of the file must contain 3 functions with the following arguments:</p>
-
 <ol>
-<li>
-<code>setup(args)</code>
-
+<li><code>setup(args)</code></li>
+</ol>
 <ul>
 <li>The function executed to set up the config object</li>
 </ul>
-</li>
-<li>
-<code>transition_function(grid, neighbourstates, neighbourcounts)</code>
-
+<ol start="2">
+<li><code>transition_function(grid, neighbourstates, neighbourcounts)</code></li>
+</ol>
 <ul>
 <li>Define transition rules for the CA</li>
 <li>To keep track of variables (for example a counter for each grid item) append these arguments to the function arguments (eg. to keep track of decaygrid <code>def transition_function(grid, neighbourstates, neighbourcounts, decaygrid):</code>. To see an example of this, see <a href="#extra-variables">Extra variables</a> as discussed later.)</li>
 </ul>
-</li>
-<li>
-<code>main()</code>
-
+<ol start="3">
+<li><code>main()</code></li>
+</ol>
 <ul>
 <li>For main() to be executed when <code>python yourdescription.py</code> is executed the following must be placed at the <em>bottom</em> of the file, as is standard practice in python files.</li>
 </ul>
-
 <div class="highlight highlight-source-python"><pre><span class="pl-k">if</span> <span class="pl-c1">__name__</span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>__main__<span class="pl-pds">"</span></span>:
     main()</pre></div>
-
 <ul>
 <li>This function will only require editing if initialising variables to keep track of (eg. the initial state of <code>decaygrid</code> will be initialised in main. See <a href="#extra-variables">Extra variables</a> below for an example of this)</li>
 </ul>
-</li>
-</ol>
-
 <h4>
 <a id="user-content-setup" class="anchor" href="#setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup</h4>
-
 <p>The main program runs these description files in two stages:</p>
-
 <ul>
 <li>
 <p>'Pre-run' runs through only the <code>setup</code> function of the module and saves the <a href="#the-caconfig-class">CAConfig</a> object to disk, which is then instantly loaded by the main software.</p>
-
 <ul>
 <li>This pre-run is executed when the CA file is initialy 'opened' into the main GUI</li>
 <li>During this pre-run 3 parameters <em>must</em> be set:</li>
 </ul>
-
 <div class="highlight highlight-source-python"><pre>config.title <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Your title here<span class="pl-pds">"</span></span>  <span class="pl-c"><span class="pl-c">#</span>Give the CA a name</span>
 config.dimensions <span class="pl-k">=</span> <span class="pl-c1">2</span>             <span class="pl-c"><span class="pl-c">#</span> Define as a 2D CA</span>
 config.states <span class="pl-k">=</span> (<span class="pl-c1">0</span>,<span class="pl-c1">1</span>)             <span class="pl-c"><span class="pl-c">#</span> States used are only 0 and 1</span></pre></div>
-
 <ul>
 <li>Additionally the other config parameters may also be set to static values as below:</li>
 </ul>
-
 <p><em>Please note that as these additional parameters are being overridden at runtime, <em>the GUI will no longer have an effect</em> on the config parameters set by the user, in the description. To leave all parameters to be set by the gui, do not define any constants here</em></p>
-
 <div class="highlight highlight-source-python"><pre><span class="pl-c"><span class="pl-c">#</span> Always run 100 generations</span>
 config.num_generations <span class="pl-k">=</span> <span class="pl-c1">100</span>
 <span class="pl-c"><span class="pl-c">#</span> Initialise the colours to be black for state 0 and</span>
@@ -288,20 +246,15 @@ config.state_colors <span class="pl-k">=</span> [(<span class="pl-c1">0</span>,<
 </li>
 <li>
 <p>'Full-run' runs the entire file all the way through, applying the transition function for every generation, and saving the output to a 'timeline' file, which is saved to disk along with the config.</p>
-
 <ul>
 <li>Runs when user presses 'Run' in the GUI</li>
 </ul>
 </li>
 </ul>
-
 <h4>
 <a id="user-content-transition-function" class="anchor" href="#transition-function" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Transition function</h4>
-
 <p>As the transition function will be invoked every timestep, it is important that it is written with performance as the number one priority; only numpy array operations be used. Examples of these can be seen in <code>wolframs_1d.py</code> and <code>gol_2d.py</code>.</p>
-
 <p>A minimum of three arguments must be passed to the transition function;</p>
-
 <ol>
 <li>
 <code>grid</code> the current state of the grid</li>
@@ -310,63 +263,45 @@ config.state_colors <span class="pl-k">=</span> [(<span class="pl-c1">0</span>,<
 <li>
 <code>neighbourcounts</code> the number of neighbours of each state.</li>
 </ol>
-
 <p><em>The transition funciton must return the new state of the grid</em></p>
-
 <h6>
 <a id="user-content-example-1---using-neighbourcounts" class="anchor" href="#example-1---using-neighbourcounts" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example 1 - Using neighbourcounts</h6>
-
 <p>For example in a 2D CA (with states 0 and 1), if we wish to create a rule where the cell must be in state 1 and change to state 0 only if any 3 of its neighbours are in state 0 we would write:</p>
-
 <div class="highlight highlight-source-python"><pre>cells_in_state_1 <span class="pl-k">=</span> (grid <span class="pl-k">==</span> <span class="pl-c1">1</span>) <span class="pl-c"><span class="pl-c">#</span> cells that are currently in state 1</span>
 three_zero_neighbours <span class="pl-k">=</span> (neighbourcounts[<span class="pl-c1">0</span>] <span class="pl-k">==</span> <span class="pl-c1">3</span>) <span class="pl-c"><span class="pl-c">#</span> cells that have 3 neighbours in state 0</span>
 to_zero <span class="pl-k">=</span> cells_in_state_1 <span class="pl-k">&amp;</span> three_zero_neighbours
 <span class="pl-c"><span class="pl-c">#</span> cells that are currently in state 1 and have exactly three neighbours in state 0</span>
 <span class="pl-c"><span class="pl-c">#</span> are set to zero</span>
 grid[to_zero] <span class="pl-k">=</span> <span class="pl-c1">0</span></pre></div>
-
 <p>The <code>cells_in_state_1</code> computation creates a boolean array where only where 1 exists on the grid is True. Another boolean array is computed where the <code>neighbourcounts</code> of state 0 is 3, so only those cells that have 3 surrounding neighbours currently in state 0 are set to True, and False otherwise. These two boolean arrays are then union-ed together so only the cells where True is in the same position in both arrays becomes True, this result is then stored in <code>to_zero</code>. This boolean array is then used as indices for which cells need to undergo the change (numpy ignores the 0 or False entries when a boolean array of matching shape is supplied as indices). So only those indices where <em>both</em> conditions of the rule are satisfied undergo the change.</p>
-
 <h6>
 <a id="user-content-example-2---using-neighbourstates" class="anchor" href="#example-2---using-neighbourstates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example 2 - Using neighbourstates</h6>
-
 <p>If you wish to create rules that require more precision than simply 'any x cells in the neighbourhood' and need to check the state of specific cells, this can be achieved through using the <code>neighbourstates</code> argument.</p>
-
 <p>In a 2D CA the <code>neighbourstates</code> variable contains the states of the surrounding 8 cells in the order [NW, N, NE, W, E, SW, S, SE] (like reading the neighbourhood left to right).</p>
-
 <p>For example in a 2D CA with states (0,1,2,3)
 To create a rule where if the cell is in state 3 <em>and</em> the corner neighbours are all in states above 1, then transition to state 1:</p>
-
 <div class="highlight highlight-source-python"><pre><span class="pl-c"><span class="pl-c">#</span> unpack the state arrays</span>
 <span class="pl-c1">NW</span>, N, <span class="pl-c1">NE</span>, W, E, <span class="pl-c1">SW</span>, S, <span class="pl-c1">SE</span> <span class="pl-k">=</span> neighbourstates
 in_state_3 <span class="pl-k">=</span> (grid <span class="pl-k">==</span> <span class="pl-c1">3</span>) <span class="pl-c"><span class="pl-c">#</span> cells currently in state 3</span>
 all_corners_above_1 <span class="pl-k">=</span> (<span class="pl-c1">NW</span> <span class="pl-k">&gt;</span> <span class="pl-c1">1</span>) <span class="pl-k">&amp;</span> (<span class="pl-c1">NE</span> <span class="pl-k">&gt;</span> <span class="pl-c1">1</span>) <span class="pl-k">&amp;</span> (<span class="pl-c1">SW</span> <span class="pl-k">&gt;</span> <span class="pl-c1">1</span>) <span class="pl-k">&amp;</span> (<span class="pl-c1">SE</span> <span class="pl-k">&gt;</span> <span class="pl-c1">1</span>) <span class="pl-c"><span class="pl-c">#</span> corner states &gt; 1</span>
 to_one <span class="pl-k">=</span> in_state_3 <span class="pl-k">&amp;</span> all_corners_above_1 <span class="pl-c"><span class="pl-c">#</span> union the results</span>
 grid[to_one] <span class="pl-k">=</span> <span class="pl-c1">1</span></pre></div>
-
 <p>Of course you are not limited to using one or the other, feel free to mix and match if it is required.</p>
-
 <h5>
 <a id="user-content-important-notes" class="anchor" href="#important-notes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Important notes</h5>
-
 <ul>
 <li>You may wish to experiment creating and manipulating numpy arrays in this manner in a separate file before writing your transition function.</li>
 <li>It is recommended that you perform all of the rule calculations, before performing the rule applications. For example if I wished to perform both of the rules above, I would calculate both <code>to_zero</code> and <code>to_one</code> first, then apply the rules using <code>grid[to_zero] = 0; grid[to_one] = 1</code> then return the grid with <code>return grid</code>. This ensures that you are applying your rules on the current time step t.
-
 <ul>
 <li>You may instead make a copy of the initial grid and apply your transitions to the copy on the fly, then return it, but ensure to make a deep copy with np.copy()</li>
 </ul>
 </li>
 <li>You might like to consider that you 'clear' your grid before applying any changes to avoid mistakes. For example <code>grid[:, :] = 0</code> then <code>grid[to_one] = 1</code>, to set everything to 0 then only those which have been calculated to 1.</li>
 </ul>
-
 <h5>
 <a id="user-content-extra-variables" class="anchor" href="#extra-variables" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Extra variables</h5>
-
 <p>It is common to keep track of and manipulate variables during runtime, like staying in one state for a set number of generations, and then changing state after these generations have passed. To achieve this, add these extra variables to the arguments of your transition function, and instead of passing your transition_function to the Grid constructor, pass a tuple of your transition function and these extra variables eg. <code>(transition_function, extravar1, extravar2,...)</code>. See the example below:</p>
-
 <p>After 2 timesteps cells in state 1 decay to state 0 in a 2D CA with states (0,1):</p>
-
 <div class="highlight highlight-source-python"><pre><span class="pl-c1">...</span>
 <span class="pl-k">def</span> <span class="pl-en">transition_function</span>(<span class="pl-smi">grid</span>, <span class="pl-smi">neighbourstates</span>, <span class="pl-smi">neighbourcounts</span>, <span class="pl-smi">decaygrid</span>):
   cells_in_state_1 <span class="pl-k">=</span> (grid <span class="pl-k">==</span> <span class="pl-c1">1</span>) <span class="pl-c"><span class="pl-c">#</span> cells in state 1</span>
@@ -388,14 +323,10 @@ grid[to_one] <span class="pl-k">=</span> <span class="pl-c1">1</span></pre></div
   timeline <span class="pl-k">=</span> grid.run()
   <span class="pl-c1">...</span>
 <span class="pl-c1">...</span></pre></div>
-
 <hr>
-
 <h2>
 <a id="user-content-creating-a-new-ca-description" class="anchor" href="#creating-a-new-ca-description" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creating a new CA description</h2>
-
 <p>Using the menu bar, File -&gt; New will open a new window that the user must fill in (title, dimensions and states (optional)). This will create an auto-generated template description file in the ca_descriptions folder. All the user needs to do is ensure that the title, dimensions and states are saved into the config object, and write the transition function as described above.</p>
-
 <p>Alternativley duplicate the 1D or 2D example given, and edit accordingly.</p>
 
               </article>
